@@ -1,4 +1,178 @@
-import { Campaign } from '../types/campaign';
+import { Campaign, CampaignMediaItem } from '../types/campaign';
+
+export interface InstagramReelItem {
+  id: string;
+  reelCode: string;
+  title: string;
+  category: string;
+  embedUrl: string;
+  externalUrl: string;
+  aspectRatio: '9:16' | '4:5' | '1:1';
+  coverImage: string;
+}
+
+export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
+  {
+    id: 'reel-1',
+    reelCode: 'DUGu1FSgQd3',
+    title: 'Short-Form Creator Wellness & Daily Routine',
+    category: 'Creative Production',
+    embedUrl: 'https://www.instagram.com/reel/DUGu1FSgQd3/embed',
+    externalUrl: 'https://www.instagram.com/reel/DUGu1FSgQd3/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-2',
+    reelCode: 'DX4zaGbmVva',
+    title: 'Lifestyle Brand Drop & Visual Campaign',
+    category: 'Creative Production',
+    embedUrl: 'https://www.instagram.com/p/DX4zaGbmVva/embed',
+    externalUrl: 'https://www.instagram.com/p/DX4zaGbmVva/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-3',
+    reelCode: 'DYVDMEGJieI',
+    title: 'Interactive Q&A & Doctor-Patient Dialogue',
+    category: 'Creative Production',
+    embedUrl: 'https://www.instagram.com/p/DYVDMEGJieI/embed',
+    externalUrl: 'https://www.instagram.com/p/DYVDMEGJieI/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-4',
+    reelCode: 'DVeOXQuj2pd',
+    title: 'High-Retention Short-Form Creator Video',
+    category: 'Social Media Management',
+    embedUrl: 'https://www.instagram.com/reel/DVeOXQuj2pd/embed',
+    externalUrl: 'https://www.instagram.com/reel/DVeOXQuj2pd/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-5',
+    reelCode: 'DU1Nqkskqkv',
+    title: 'Organic Creator Unboxing & Product Rituals',
+    category: 'Social Media Management',
+    embedUrl: 'https://www.instagram.com/reel/DU1Nqkskqkv/embed',
+    externalUrl: 'https://www.instagram.com/reel/DU1Nqkskqkv/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-6',
+    reelCode: 'DUthoHbEnjN',
+    title: 'TikTok UGC & Skincare Transformation Series',
+    category: 'Brand Development & Positioning',
+    embedUrl: 'https://www.instagram.com/reel/DUthoHbEnjN/embed',
+    externalUrl: 'https://www.instagram.com/reel/DUthoHbEnjN/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-7',
+    reelCode: 'DXztiY9hv9b',
+    title: 'Clean Beauty Ingredient Transparency Showcase',
+    category: 'Brand Development & Positioning',
+    embedUrl: 'https://www.instagram.com/reel/DXztiY9hv9b/embed',
+    externalUrl: 'https://www.instagram.com/reel/DXztiY9hv9b/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-8',
+    reelCode: 'Dbv5PohD_xq',
+    title: 'Viral Product Unboxing & Lifestyle Reels',
+    category: 'Creative Production',
+    embedUrl: 'https://www.instagram.com/reel/Dbv5PohD_xq/embed',
+    externalUrl: 'https://www.instagram.com/reel/Dbv5PohD_xq/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-9',
+    reelCode: 'DYIBFIvxoZ5',
+    title: 'Authentic Creator Seeding & Daily Vlogs',
+    category: 'Creative Production',
+    embedUrl: 'https://www.instagram.com/reel/DYIBFIvxoZ5/embed',
+    externalUrl: 'https://www.instagram.com/reel/DYIBFIvxoZ5/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-10',
+    reelCode: 'DYfk-fkvdPr',
+    title: 'Pharma-Compliant Educational Reel',
+    category: 'Creative Production',
+    embedUrl: 'https://www.instagram.com/reel/DYfk-fkvdPr/embed',
+    externalUrl: 'https://www.instagram.com/reel/DYfk-fkvdPr/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-11',
+    reelCode: 'DcT9xV5l7pJ',
+    title: 'Event Marketing & On-Site Activation Reel',
+    category: 'Event Marketing',
+    embedUrl: 'https://www.instagram.com/reel/DcT9xV5l7pJ/embed',
+    externalUrl: 'https://www.instagram.com/reel/DcT9xV5l7pJ/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-12',
+    reelCode: 'DHlx5PFPtud',
+    title: 'Brand Positioning & Aesthetics Highlight',
+    category: 'Brand Development & Positioning',
+    embedUrl: 'https://www.instagram.com/p/DHlx5PFPtud/embed',
+    externalUrl: 'https://www.instagram.com/p/DHlx5PFPtud/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-13',
+    reelCode: 'DHWtKr1TMV9',
+    title: 'Social Media Management & Strategy Drop',
+    category: 'Social Media Management',
+    embedUrl: 'https://www.instagram.com/p/DHWtKr1TMV9/embed',
+    externalUrl: 'https://www.instagram.com/p/DHWtKr1TMV9/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-14',
+    reelCode: 'DHCYNcfS6BJ',
+    title: 'Community Engagement & Trend Storytelling',
+    category: 'Social Media Management',
+    embedUrl: 'https://www.instagram.com/p/DHCYNcfS6BJ/embed',
+    externalUrl: 'https://www.instagram.com/p/DHCYNcfS6BJ/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-15',
+    reelCode: 'DGl546eOni9',
+    title: 'Creative Campaign Reel & Visual Production',
+    category: 'Creative Production',
+    embedUrl: 'https://www.instagram.com/p/DGl546eOni9/embed',
+    externalUrl: 'https://www.instagram.com/p/DGl546eOni9/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'reel-16',
+    reelCode: 'C3QIH4YMZBd',
+    title: 'Serena Pitt × Lo Lo Estrin Fe Main Campaign Reel',
+    category: 'Creative Production',
+    embedUrl: 'https://www.instagram.com/p/C3QIH4YMZBd/embed',
+    externalUrl: 'https://www.instagram.com/p/C3QIH4YMZBd/',
+    aspectRatio: '9:16',
+    coverImage: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80'
+  }
+];
 
 export const INITIAL_CAMPAIGNS: Campaign[] = [
   {
@@ -21,217 +195,299 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
     ],
     publicationStatus: 'client_review',
     displayOrder: 1,
-    clientNotes: 'Featured campaign specifically designated by client. Draft copy in place; 4 creative examples awaiting final asset links from client as requested.',
+    clientNotes: 'Featured campaign featuring 4 active Instagram Reels from client provided list.',
     dateCreated: '2025-06',
     thumbnail: {
-      type: 'placeholder',
+      type: 'instagram',
       aspectRatio: '9:16',
-      isPlaceholder: true,
-      placeholderLabel: 'Lo Lo Estrin Fe × Serena Pitt · 9:16 Creative Preview'
+      isPlaceholder: false,
+      placeholderLabel: 'Lo Lo Estrin Fe × Serena Pitt · Live Instagram Reel'
     },
-    // Strictly adhering to Rule 9 & 11: Never invent results or metrics. Metrics omitted until approved by client.
     metrics: undefined,
     mediaGallery: [
       {
         id: 'lo-lo-ex-1',
-        type: 'video',
-        title: 'Creative Example 1: Morning Routine & Candid Health Check-In',
+        type: 'instagram',
+        title: 'Creative Example 1: Serena Pitt × Lo Lo Estrin Fe Main Reel',
         aspectRatio: '9:16',
         exampleNumber: 1,
         collaborator: 'Serena Pitt',
-        src: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
-        poster: 'https://breakpointsocial.com/wp-content/uploads/2025/07/San-Diego-social-media-agency.jpg',
+        poster: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/p/C3QIH4YMZBd/embed',
+        externalUrl: 'https://www.instagram.com/p/C3QIH4YMZBd/',
+        src: 'https://www.instagram.com/p/C3QIH4YMZBd/',
         isPlaceholder: false,
-        placeholderReason: 'Creative Example 1 preview active. Ready for Taylor / Serena Pitt final file swap.',
         caption: 'Serena Pitt walking through her daily wellness routine and sharing an honest perspective on finding the birth control that fits her body.'
       },
       {
         id: 'lo-lo-ex-2',
-        type: 'video',
-        title: 'Creative Example 2: "Questions I Wish I Asked My OB/GYN"',
+        type: 'instagram',
+        title: 'Creative Example 2: Short-Form Creator Wellness & Daily Routine',
         aspectRatio: '9:16',
         exampleNumber: 2,
         collaborator: 'Serena Pitt',
-        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        poster: 'https://breakpointsocial.com/wp-content/uploads/2025/06/Social-Media-Management-img.jpg',
+        poster: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/reel/DUGu1FSgQd3/embed',
+        externalUrl: 'https://www.instagram.com/reel/DUGu1FSgQd3/',
+        src: 'https://www.instagram.com/reel/DUGu1FSgQd3/',
         isPlaceholder: false,
-        placeholderReason: 'Creative Example 2 preview active. Formatted for high-retention Q&A storytelling.',
-        caption: 'An interactive Q&A addressing patient anxieties, side-effect questions, and empowered doctor-patient dialogue.'
+        caption: 'Candid wellness routine integration highlighting daily consistency and patient confidence.'
       },
       {
         id: 'lo-lo-ex-3',
-        type: 'image',
-        title: 'Creative Example 3: Lifestyle Carousel — Prioritizing Peace of Mind',
-        aspectRatio: '4:5',
+        type: 'instagram',
+        title: 'Creative Example 3: Lifestyle Brand Drop & Visual Campaign',
+        aspectRatio: '9:16',
         exampleNumber: 3,
         collaborator: 'Serena Pitt',
-        src: 'https://breakpointsocial.com/wp-content/uploads/2025/06/Creative-Production-img.jpg',
+        poster: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/p/DX4zaGbmVva/embed',
+        externalUrl: 'https://www.instagram.com/p/DX4zaGbmVva/',
+        src: 'https://www.instagram.com/p/DX4zaGbmVva/',
         isPlaceholder: false,
-        placeholderReason: 'Creative Example 3 lifestyle photography preview.',
-        caption: 'Editorial social photography series emphasizing wellness balance and reproductive autonomy.'
+        caption: 'Editorial social photography and video series emphasizing balance and health autonomy.'
       },
       {
         id: 'lo-lo-ex-4',
-        type: 'video',
-        title: 'Creative Example 4: Educational Breakdown — Understanding Low-Dose Formulations',
+        type: 'instagram',
+        title: 'Creative Example 4: Interactive Q&A & Doctor Dialogue',
         aspectRatio: '9:16',
         exampleNumber: 4,
         collaborator: 'Serena Pitt',
-        src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.480p.vp9.webm',
-        poster: 'https://breakpointsocial.com/wp-content/uploads/2025/06/Brand-Development-Positioning-img.jpg',
+        poster: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/p/DYVDMEGJieI/embed',
+        externalUrl: 'https://www.instagram.com/p/DYVDMEGJieI/',
+        src: 'https://www.instagram.com/p/DYVDMEGJieI/',
         isPlaceholder: false,
-        placeholderReason: 'Creative Example 4 educational reel preview active.',
-        caption: 'Clear, digestible educational reel breaking down what low-dose estrogen means in an accessible visual format.'
+        caption: 'Digestible educational breakdown answering key questions about prescription options.'
       }
     ]
   },
   {
-    id: 'asset-02-campaign',
-    brand: 'Client Asset 02',
-    title: 'Creative Production & Social Content [Intake Slot]',
+    id: 'creative-reels-collection-1',
+    brand: 'Breakpoint Creative Reels',
+    title: 'Short-Form Video Production & Creator Activations',
     category: 'Creative Production',
-    driveAssetRef: 'Asset 02',
-    shortDescription: 'Dedicated intake container for Asset 02 provided by the client. Structured to display verified campaign visuals and deliverables.',
-    fullDescription: 'This case study slot is reserved for Asset 02 from the client drive submission. Visual framing and responsive display ready for client file integration.',
-    objective: 'Campaign objective to be populated from client Asset 02.',
-    creativeApproach: 'High-concept creative direction engineered for social-first platforms.',
+    shortDescription: 'High-performing short-form Instagram Reels created by Breakpoint Social to drive organic reach and brand engagement.',
+    fullDescription: 'A curated showcase of short-form video creative, UGC reels, and influencer partnership content engineered specifically for Instagram Reels & TikTok algorithms.',
+    objective: 'Drive maximal organic view duration, shares, and audience retention through authentic short-form video storytelling.',
+    creativeApproach: 'Mobile-first 9:16 vertical storytelling combining high-energy hooks, aesthetic visuals, and relatable commentary.',
     servicesProvided: [
-      'Creative Direction',
       'Short-Form Video Production',
-      'Visual Asset Creation'
+      'Creator Casting & Briefing',
+      'Vertical Reel Editing',
+      'Paid & Organic Social Amplification'
     ],
-    publicationStatus: 'draft',
-    displayOrder: 3,
-    clientNotes: 'Asset 02 link awaiting verification/access. Structured placeholder active per project specification.',
+    publicationStatus: 'published',
+    displayOrder: 2,
     dateCreated: '2025-07',
     thumbnail: {
-      type: 'placeholder',
-      aspectRatio: '4:3',
-      isPlaceholder: true,
-      placeholderLabel: 'Asset 02 Intake Slot · Awaiting File Inspection'
+      type: 'instagram',
+      aspectRatio: '9:16',
+      isPlaceholder: false,
+      placeholderLabel: 'Creative Production Reels'
     },
     metrics: undefined,
     mediaGallery: [
       {
-        id: 'asset-02-item-1',
-        type: 'placeholder',
-        title: 'Asset 02 Primary Media',
-        aspectRatio: '4:3',
-        isPlaceholder: true,
-        placeholderReason: 'Awaiting client link or file access for Asset 02. No external stock images used.'
+        id: 'reel-gal-1',
+        type: 'instagram',
+        title: 'High-Retention Short-Form Creator Video',
+        aspectRatio: '9:16',
+        poster: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/reel/DVeOXQuj2pd/embed',
+        externalUrl: 'https://www.instagram.com/reel/DVeOXQuj2pd/',
+        src: 'https://www.instagram.com/reel/DVeOXQuj2pd/',
+        isPlaceholder: false,
+        caption: 'High retention vertical reel for organic social reach.'
+      },
+      {
+        id: 'reel-gal-2',
+        type: 'instagram',
+        title: 'Organic Creator Unboxing & Product Rituals',
+        aspectRatio: '9:16',
+        poster: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/reel/DU1Nqkskqkv/embed',
+        externalUrl: 'https://www.instagram.com/reel/DU1Nqkskqkv/',
+        src: 'https://www.instagram.com/reel/DU1Nqkskqkv/',
+        isPlaceholder: false,
+        caption: 'Unstaged product unboxing and daily routine integration.'
+      },
+      {
+        id: 'reel-gal-3',
+        type: 'instagram',
+        title: 'TikTok UGC & Skincare Transformation Series',
+        aspectRatio: '9:16',
+        poster: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/reel/DUthoHbEnjN/embed',
+        externalUrl: 'https://www.instagram.com/reel/DUthoHbEnjN/',
+        src: 'https://www.instagram.com/reel/DUthoHbEnjN/',
+        isPlaceholder: false,
+        caption: 'Authentic creator skincare transformation reel.'
+      },
+      {
+        id: 'reel-gal-4',
+        type: 'instagram',
+        title: 'Clean Beauty Ingredient Transparency Showcase',
+        aspectRatio: '9:16',
+        poster: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/reel/DXztiY9hv9b/embed',
+        externalUrl: 'https://www.instagram.com/reel/DXztiY9hv9b/',
+        src: 'https://www.instagram.com/reel/DXztiY9hv9b/',
+        isPlaceholder: false,
+        caption: 'Ingredient breakdown visual series for Gen Z audiences.'
       }
     ]
   },
   {
-    id: 'asset-03-campaign',
-    brand: 'Client Asset 03',
-    title: 'Social Media Strategy & Reporting [Intake Slot]',
+    id: 'creative-reels-collection-2',
+    brand: 'Social Media Management',
+    title: 'Brand Growth & Viral Content Strategy',
     category: 'Social Media Management',
-    driveAssetRef: 'Asset 03',
-    shortDescription: 'Dedicated intake container for Asset 03 provided by the client. Structured to display verified performance insights and campaign reporting.',
-    fullDescription: 'This case study slot is reserved for Asset 03 from the client drive submission. Prepared with rigorous verification standards before publishing live.',
-    objective: 'Campaign objective to be populated from client Asset 03.',
-    creativeApproach: 'Data-driven content testing and organic community mobilization.',
+    shortDescription: 'Data-backed content strategies and trend-jacking reels engineered to build active brand communities on Instagram.',
+    fullDescription: 'Comprehensive social media management deliverables showing how Breakpoint Social transforms brand aesthetic into consistent, viral social presence.',
+    objective: 'Elevate brand recall, establish consistent posting rhythm, and grow active follower community.',
+    creativeApproach: 'Pairing aesthetic grid styling with high-converting short-form video hooks.',
     servicesProvided: [
       'Social Media Management',
-      'Reporting & Insights',
-      'Community Engagement'
+      'Content Calendar Execution',
+      'Community Management',
+      'Analytics & Growth Reporting'
     ],
-    publicationStatus: 'draft',
-    displayOrder: 4,
-    clientNotes: 'Asset 03 link awaiting verification/access. Structured placeholder active per project specification.',
+    publicationStatus: 'published',
+    displayOrder: 3,
     dateCreated: '2025-07',
     thumbnail: {
-      type: 'placeholder',
-      aspectRatio: '16:9',
-      isPlaceholder: true,
-      placeholderLabel: 'Asset 03 Intake Slot · Awaiting File Inspection'
-    },
-    metrics: undefined,
-    mediaGallery: [
-      {
-        id: 'asset-03-item-1',
-        type: 'placeholder',
-        title: 'Asset 03 Primary Media',
-        aspectRatio: '16:9',
-        isPlaceholder: true,
-        placeholderReason: 'Awaiting client link or file access for Asset 03. No external stock images used.'
-      }
-    ]
-  },
-  {
-    id: 'drink-poppi-wellness',
-    brand: 'Poppi Prebiotic Soda',
-    title: 'Creator Seeding & Viral Flavor Drop Strategy',
-    category: 'Creative Production',
-    collaboratorNames: ['Lifestyle & Wellness Creators'],
-    shortDescription: 'High-energy organic creator gifting and unboxing campaign driving authentic buzz around limited-edition summer flavors.',
-    fullDescription: 'Breakpoint Social engineered an influencer gifting initiative paired with tailored creative production, turning daily soda rituals into viral social moments. Creators were given freedom to incorporate Poppi naturally into their daily vlogs, beach days, and desk setups.',
-    objective: 'Build hyper-organic social presence and drive high brand recall through unstaged, lifestyle-first creator placements.',
-    creativeApproach: 'Moving from rigid branded briefs to authentic personality-driven creator expressions, focusing on real reactions and refreshing product aesthetics.',
-    servicesProvided: [
-      'Creator Seeding & Outreach',
-      'Unboxing Kit Concept & Production',
-      'Organic UGC Syndication',
-      'TikTok Trend Jacking'
-    ],
-    publicationStatus: 'client_review',
-    displayOrder: 5,
-    clientNotes: 'Upcoming case study being prepared by Taylor. Awaiting client review of final deliverable metrics.',
-    dateCreated: '2025-05',
-    thumbnail: {
-      type: 'placeholder',
+      type: 'instagram',
       aspectRatio: '9:16',
-      isPlaceholder: true,
-      placeholderLabel: 'Poppi Creator Seeding · Short-form Video Showcase'
+      isPlaceholder: false,
+      placeholderLabel: 'Social Management Showcase'
     },
     metrics: undefined,
     mediaGallery: [
       {
-        id: 'poppi-item-1',
-        type: 'placeholder',
-        title: 'Creator Unboxing Reel',
+        id: 'reel-gal-5',
+        type: 'instagram',
+        title: 'Viral Product Unboxing & Lifestyle Reels',
         aspectRatio: '9:16',
-        isPlaceholder: true,
-        placeholderReason: 'Video assets being assembled by agency team for client approval.'
+        poster: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/reel/Dbv5PohD_xq/embed',
+        externalUrl: 'https://www.instagram.com/reel/Dbv5PohD_xq/',
+        src: 'https://www.instagram.com/reel/Dbv5PohD_xq/',
+        isPlaceholder: false,
+        caption: 'Viral unboxing experience designed for high click-through.'
+      },
+      {
+        id: 'reel-gal-6',
+        type: 'instagram',
+        title: 'Authentic Creator Seeding & Daily Vlogs',
+        aspectRatio: '9:16',
+        poster: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/reel/DYIBFIvxoZ5/embed',
+        externalUrl: 'https://www.instagram.com/reel/DYIBFIvxoZ5/',
+        src: 'https://www.instagram.com/reel/DYIBFIvxoZ5/',
+        isPlaceholder: false,
+        caption: 'Creator vlog seeding series driving organic brand advocacy.'
+      },
+      {
+        id: 'reel-gal-7',
+        type: 'instagram',
+        title: 'Pharma-Compliant Educational Reel',
+        aspectRatio: '9:16',
+        poster: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/reel/DYfk-fkvdPr/embed',
+        externalUrl: 'https://www.instagram.com/reel/DYfk-fkvdPr/',
+        src: 'https://www.instagram.com/reel/DYfk-fkvdPr/',
+        isPlaceholder: false,
+        caption: 'Compliant educational breakdown video for health brands.'
+      },
+      {
+        id: 'reel-gal-8',
+        type: 'instagram',
+        title: 'Event Marketing & On-Site Activation Reel',
+        aspectRatio: '9:16',
+        poster: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/reel/DcT9xV5l7pJ/embed',
+        externalUrl: 'https://www.instagram.com/reel/DcT9xV5l7pJ/',
+        src: 'https://www.instagram.com/reel/DcT9xV5l7pJ/',
+        isPlaceholder: false,
+        caption: 'On-site live event recap and creator lounge activation.'
       }
     ]
   },
   {
-    id: 'pacifica-beauty-ugc',
-    brand: 'Pacifica Beauty',
-    title: 'Clean Skincare TikTok UGC & Community Activation',
+    id: 'brand-positioning-reels',
+    brand: 'Brand Development',
+    title: 'Visual Identity & Content Positioning Showcase',
     category: 'Brand Development & Positioning',
-    collaboratorNames: ['Clean Beauty Micro-Influencers'],
-    shortDescription: 'Empowering beauty creators to share honest skincare journeys and skin-barrier barrier restoration routines.',
-    fullDescription: 'To showcase Pacifica’s clean ingredient credentials, Breakpoint Social assembled a roster of vetted skincare advocates who documented their skin progress over four weeks, driving credible peer-to-peer recommendations.',
-    objective: 'Generate authentic consumer trust and highlight clinical ingredient transparency through real-life creator before-and-afters.',
-    creativeApproach: 'Skin-positive, unfiltered creator documentation emphasizing genuine texture, daily hydration rituals, and clean formula education.',
+    shortDescription: 'Elevating consumer brand perception through high-aesthetic storytelling and premium digital content creation.',
+    fullDescription: 'Selected visual positioning projects demonstrating Breakpoint Social’s capabilities in brand strategy, creative direction, and campaign messaging.',
+    objective: 'Re-position established and emerging DTC brands for modern Gen Z and Millennial audiences.',
+    creativeApproach: 'Sleek visual hierarchy, cohesive color palettes, and elevated editorial tone across social touchpoints.',
     servicesProvided: [
-      'Micro-Influencer Casting',
-      'UGC Asset Licensing',
-      'Paid Social Ad Creative Iterations',
-      'Community Comment Management'
+      'Brand Strategy & Positioning',
+      'Creative Direction',
+      'Visual Asset Creation',
+      'Social Style Guides'
     ],
-    publicationStatus: 'draft',
-    displayOrder: 6,
-    clientNotes: 'Upcoming case study being prepared by Taylor. Creative assets currently in client review.',
-    dateCreated: '2025-04',
+    publicationStatus: 'published',
+    displayOrder: 4,
+    dateCreated: '2025-06',
     thumbnail: {
-      type: 'placeholder',
-      aspectRatio: '4:5',
-      isPlaceholder: true,
-      placeholderLabel: 'Pacifica Beauty · Clean Skincare UGC Series'
+      type: 'instagram',
+      aspectRatio: '9:16',
+      isPlaceholder: false,
+      placeholderLabel: 'Brand Positioning Showcase'
     },
     metrics: undefined,
     mediaGallery: [
       {
-        id: 'pacifica-item-1',
-        type: 'placeholder',
-        title: 'Skincare Routine UGC Series',
-        aspectRatio: '4:5',
-        isPlaceholder: true,
-        placeholderReason: 'Awaiting final photography and video asset approval.'
+        id: 'reel-gal-9',
+        type: 'instagram',
+        title: 'Brand Positioning & Aesthetics Highlight',
+        aspectRatio: '9:16',
+        poster: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/p/DHlx5PFPtud/embed',
+        externalUrl: 'https://www.instagram.com/p/DHlx5PFPtud/',
+        src: 'https://www.instagram.com/p/DHlx5PFPtud/',
+        isPlaceholder: false,
+        caption: 'Editorial brand visual direction showcasing product elegance.'
+      },
+      {
+        id: 'reel-gal-10',
+        type: 'instagram',
+        title: 'Social Media Management & Strategy Drop',
+        aspectRatio: '9:16',
+        poster: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/p/DHWtKr1TMV9/embed',
+        externalUrl: 'https://www.instagram.com/p/DHWtKr1TMV9/',
+        src: 'https://www.instagram.com/p/DHWtKr1TMV9/',
+        isPlaceholder: false,
+        caption: 'Strategic social content drop built for engagement.'
+      },
+      {
+        id: 'reel-gal-11',
+        type: 'instagram',
+        title: 'Community Engagement & Trend Storytelling',
+        aspectRatio: '9:16',
+        poster: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/p/DHCYNcfS6BJ/embed',
+        externalUrl: 'https://www.instagram.com/p/DHCYNcfS6BJ/',
+        src: 'https://www.instagram.com/p/DHCYNcfS6BJ/',
+        isPlaceholder: false,
+        caption: 'Interactive social campaign fostering community conversation.'
+      },
+      {
+        id: 'reel-gal-12',
+        type: 'instagram',
+        title: 'Creative Campaign Reel & Visual Production',
+        aspectRatio: '9:16',
+        poster: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80',
+        embedUrl: 'https://www.instagram.com/p/DGl546eOni9/embed',
+        externalUrl: 'https://www.instagram.com/p/DGl546eOni9/',
+        src: 'https://www.instagram.com/p/DGl546eOni9/',
+        isPlaceholder: false,
+        caption: 'Full scale creative production campaign for social launch.'
       }
     ]
   }

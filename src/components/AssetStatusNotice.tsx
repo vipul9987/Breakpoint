@@ -137,64 +137,64 @@ export const AssetStatusNotice: React.FC<AssetStatusNoticeProps> = ({
 
               <div className="space-y-3">
                 {/* Asset 01 */}
-                <div className="p-4 rounded-xl bg-white/70 border border-[#84572f]/15 flex items-start justify-between gap-4">
+                <div className="p-4 rounded-xl bg-emerald-50/60 border border-emerald-500/20 flex items-start justify-between gap-4">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-bold text-xs text-[#84572f]">Asset 01</span>
-                      <span className="text-[11px] px-2 py-0.5 bg-amber-100 text-amber-900 rounded font-medium">
-                        Awaiting File/Link Access
+                      <span className="font-bold text-xs text-[#84572f]">Asset 01 (Google Drive Video)</span>
+                      <span className="text-[11px] px-2 py-0.5 bg-emerald-100 text-emerald-900 rounded font-medium">
+                        Verified &amp; Active
                       </span>
                     </div>
                     <p className="text-xs text-[#1c1c1c]/80">
-                      Dedicated intake slot active in the portfolio grid. Ready for immediate media ingestion once drive access is verified.
+                      Google Drive Video ID: <code className="text-xs bg-white px-1 py-0.5 rounded font-mono">1pNypKbpqyjXF01hOlruBjpIIlP8zWd_8</code>. Active in portfolio &amp; lightbox player.
                     </p>
                   </div>
-                  <Clock className="w-4 h-4 text-amber-600 shrink-0 mt-1" />
+                  <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-1" />
                 </div>
 
                 {/* Asset 02 */}
-                <div className="p-4 rounded-xl bg-white/70 border border-[#84572f]/15 flex items-start justify-between gap-4">
+                <div className="p-4 rounded-xl bg-emerald-50/60 border border-emerald-500/20 flex items-start justify-between gap-4">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-bold text-xs text-[#84572f]">Asset 02</span>
-                      <span className="text-[11px] px-2 py-0.5 bg-amber-100 text-amber-900 rounded font-medium">
-                        Awaiting File/Link Access
+                      <span className="font-bold text-xs text-[#84572f]">Asset 02 (Google Drive Video)</span>
+                      <span className="text-[11px] px-2 py-0.5 bg-emerald-100 text-emerald-900 rounded font-medium">
+                        Verified &amp; Active
                       </span>
                     </div>
                     <p className="text-xs text-[#1c1c1c]/80">
-                      Dedicated intake slot active in the portfolio grid. Configured for high-resolution creative deliverables.
+                      Google Drive Video ID: <code className="text-xs bg-white px-1 py-0.5 rounded font-mono">1LU2fZGwLsecM2OYK3AtItjlqDcHgWrRB</code>. Active in portfolio &amp; lightbox player.
                     </p>
                   </div>
-                  <Clock className="w-4 h-4 text-amber-600 shrink-0 mt-1" />
+                  <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-1" />
                 </div>
 
                 {/* Asset 03 */}
-                <div className="p-4 rounded-xl bg-white/70 border border-[#84572f]/15 flex items-start justify-between gap-4">
+                <div className="p-4 rounded-xl bg-emerald-50/60 border border-emerald-500/20 flex items-start justify-between gap-4">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-bold text-xs text-[#84572f]">Asset 03</span>
-                      <span className="text-[11px] px-2 py-0.5 bg-amber-100 text-amber-900 rounded font-medium">
-                        Awaiting File/Link Access
+                      <span className="font-bold text-xs text-[#84572f]">Asset 03 (Google Drive Video)</span>
+                      <span className="text-[11px] px-2 py-0.5 bg-emerald-100 text-emerald-900 rounded font-medium">
+                        Verified &amp; Active
                       </span>
                     </div>
                     <p className="text-xs text-[#1c1c1c]/80">
-                      Dedicated intake slot active in the portfolio grid. Prepared for campaign reporting and social media deliverables.
+                      Google Drive Video ID: <code className="text-xs bg-white px-1 py-0.5 rounded font-mono">1tCyv1-7GkiFYoAFOeDErtLBDDRUxkOmz</code>. Active in portfolio &amp; lightbox player.
                     </p>
                   </div>
-                  <Clock className="w-4 h-4 text-amber-600 shrink-0 mt-1" />
+                  <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-1" />
                 </div>
 
                 {/* Lo Lo Estrin Fe (4 creative examples) */}
-                <div className="p-4 rounded-xl bg-[#92ada4]/15 border border-[#84572f]/15 flex items-start justify-between gap-4">
+                <div className="p-4 rounded-xl bg-[#92ada4]/20 border border-[#84572f]/20 flex items-start justify-between gap-4">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-bold text-xs text-[#84572f]">Lo Lo Estrin Fe (4 Creative Examples)</span>
-                      <span className="text-[11px] px-2 py-0.5 bg-[#92ada4]/30 text-[#141615] rounded font-medium">
-                        Structured 9:16 Gallery Ready
+                      <span className="font-bold text-xs text-[#84572f]">Lo Lo Estrin Fe (Serena Pitt Campaign)</span>
+                      <span className="text-[11px] px-2 py-0.5 bg-emerald-100 text-emerald-900 rounded font-medium">
+                        Live Instagram Reel + 3 Drive Videos
                       </span>
                     </div>
                     <p className="text-xs text-[#1c1c1c]/80">
-                      Examples 1, 2, 3, and 4 are structured with mobile 9:16 aspect ratios, video controls, and lightbox expansion. Verified copy will replace draft copy upon final client approval.
+                      Instagram Post (<code className="text-xs bg-white px-1 py-0.5 rounded font-mono">C3QIH4YMZBd</code>) and 3 client Drive videos linked &amp; active in the featured campaign gallery.
                     </p>
                   </div>
                   <CheckCircle className="w-4 h-4 text-[#526840] shrink-0 mt-1" />

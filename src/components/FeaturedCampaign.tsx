@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Play, Pause, Maximize2, AlertCircle, Volume2, VolumeX, Eye, Upload, CheckCircle2 } from 'lucide-react';
+import { Play, Pause, Maximize2, Volume2, VolumeX, Eye, ExternalLink } from 'lucide-react';
 import { Campaign, CampaignMediaItem } from '../types/campaign';
 
 interface FeaturedCampaignProps {
@@ -9,27 +9,24 @@ interface FeaturedCampaignProps {
   onUpdateMediaItem?: (updatedMedia: CampaignMediaItem) => void;
 }
 
-// Sub-component for individual creative example card with real video playback
+// Sub-component for individual creative example card with real video & embed playback
 const CreativeExampleCard: React.FC<{
   item: CampaignMediaItem;
   onOpenLightbox: (item: CampaignMediaItem) => void;
   onUpdateMediaItem?: (updatedMedia: CampaignMediaItem) => void;
-}> = ({ item, onOpenLightbox, onUpdateMediaItem }) => {
+}> = ({ item, onOpenLightbox }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
   
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const [customSrc, setCustomSrc] = useState<string | undefined>(item.src);
-  const [showUploadSuccess, setShowUploadSuccess] = useState(false);
+  const [customSrc, setCustomSrc] = useState<string | undefined>(item.src || item.embedUrl);
 
-  // Sync customSrc if item.src changes
   useEffect(() => {
-    setCustomSrc(item.src);
-  }, [item.src]);
+    setCustomSrc(item.src || item.embedUrl);
+  }, [item.src, item.embedUrl]);
 
   const togglePlay = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -75,52 +72,46 @@ const CreativeExampleCard: React.FC<{
     }
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const url = URL.createObjectURL(file);
-      setCustomSrc(url);
-      setShowUploadSuccess(true);
-      setTimeout(() => setShowUploadSuccess(false), 3000);
-      if (onUpdateMediaItem) {
-        onUpdateMediaItem({ ...item, src: url, isPlaceholder: false });
-      }
-      setTimeout(() => {
-        if (videoRef.current) {
-          videoRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
-        }
-      }, 200);
-    }
-  };
-
   const formatTime = (secs: number) => {
     const m = Math.floor(secs / 60);
     const s = Math.floor(secs % 60);
     return `${m}:${s < 10 ? '0' : ''}${s}`;
   };
 
-  const isVideo = item.type === 'video' || Boolean(customSrc && (customSrc.endsWith('.mp4') || customSrc.endsWith('.webm') || customSrc.startsWith('blob:')));
+  const isDriveEmbed = item.type === 'drive' || Boolean(customSrc && customSrc.includes('drive.google.com'));
+  const isInstagramEmbed = item.type === 'instagram' || Boolean(customSrc && customSrc.includes('instagram.com'));
+  const isHtmlVideo = item.type === 'video' || Boolean(customSrc && (customSrc.endsWith('.mp4') || customSrc.endsWith('.webm') || customSrc.startsWith('blob:')));
 
   return (
     <div
       onClick={() => onOpenLightbox({ ...item, src: customSrc })}
       className="group relative flex flex-col bg-[#fcf5e9] rounded-2xl overflow-hidden border border-[#84572f]/15 hover:border-[#84572f]/50 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer"
     >
-      {/* Hidden file input for uploading custom video */}
-      <input
-        type="file"
-        ref={fileInputRef}
-        onChange={handleFileChange}
-        accept="video/mp4,video/webm,video/quicktime,image/*"
-        className="hidden"
-      />
-
-      {/* 9:16 Portrait Container for Mobile Short-Form Content */}
+      {/* 9:16 Portrait Container */}
       <div className="relative w-full aspect-[9/16] bg-[#141615] overflow-hidden flex flex-col justify-between">
         
-        {isVideo && customSrc ? (
+        {isDriveEmbed || isInstagramEmbed ? (
+          /* High resolution cover photo or embedded video iframe */
+          <div className="absolute inset-0 bg-neutral-900 overflow-hidden flex items-center justify-center">
+            {item.poster ? (
+              <img
+                src={item.poster}
+                alt={item.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            ) : (
+              <iframe
+                src={item.embedUrl || customSrc}
+                className="w-full h-full border-0 bg-black pointer-events-auto"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowFullScreen
+                title={item.title}
+              />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 group-hover:via-black/10 transition-colors pointer-events-none" />
+          </div>
+        ) : isHtmlVideo && customSrc ? (
           <>
-            {/* Real Playable HTML5 Video Element */}
             <video
               ref={videoRef}
               src={customSrc}
@@ -135,10 +126,8 @@ const CreativeExampleCard: React.FC<{
               className="absolute inset-0 w-full h-full object-cover"
             />
 
-            {/* Dark gradient overlay for UI controls readability */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none" />
 
-            {/* Large Center Play / Pause Indicator (shows when paused or hover) */}
             <div 
               onClick={togglePlay}
               className={`absolute inset-0 flex items-center justify-center transition-opacity duration-200 z-10 ${
@@ -155,7 +144,6 @@ const CreativeExampleCard: React.FC<{
             </div>
           </>
         ) : item.type === 'image' && item.src ? (
-          /* Real Image Display */
           <div className="absolute inset-0 bg-neutral-900">
             <img
               src={item.src}
@@ -165,7 +153,6 @@ const CreativeExampleCard: React.FC<{
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 pointer-events-none" />
           </div>
         ) : (
-          /* Staging / Placeholder Slot */
           <div className="absolute inset-0 bg-gradient-to-b from-[#1c1c1c] via-[#141615] to-[#0a0a0a] flex flex-col items-center justify-center p-6 text-center">
             <div className="w-12 h-12 rounded-full bg-[#84572f]/20 border border-[#f1d5a0]/40 flex items-center justify-center text-[#f1d5a0] mb-3">
               <span className="font-extrabold text-sm font-display">0{item.exampleNumber}</span>
@@ -176,38 +163,35 @@ const CreativeExampleCard: React.FC<{
             <p className="text-xs text-white/70 line-clamp-3 mb-4">
               {item.title}
             </p>
-            <span className="px-2.5 py-1 rounded bg-black/60 border border-white/10 text-[10px] text-[#f1d5a0]">
-              Pending Client Video Link
-            </span>
           </div>
         )}
 
         {/* Top Badges & Actions */}
-        <div className="relative z-20 p-3.5 flex items-center justify-between">
-          <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-black/70 text-[#f1d5a0] backdrop-blur-xs border border-white/10">
+        <div className="relative z-20 p-3.5 flex items-center justify-between pointer-events-none">
+          <span className="px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-black/80 text-[#f1d5a0] backdrop-blur-md border border-white/10">
             0{item.exampleNumber} · {item.type.toUpperCase()}
           </span>
 
-          <div className="flex items-center gap-1.5">
-            {/* Quick Upload / Replace Video Button */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                fileInputRef.current?.click();
-              }}
-              title="Upload / Replace with your own video file"
-              className="p-1.5 rounded-full bg-black/60 hover:bg-[#84572f] text-white/90 hover:text-white transition-colors border border-white/10"
-              aria-label="Upload custom video file"
-            >
-              <Upload className="w-3.5 h-3.5" />
-            </button>
+          <div className="flex items-center gap-1.5 pointer-events-auto">
+            {item.externalUrl && (
+              <a
+                href={item.externalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                title={`Open in ${item.type === 'instagram' ? 'Instagram' : 'Google Drive'}`}
+                className="p-1.5 rounded-full bg-black/70 hover:bg-[#84572f] text-white/90 hover:text-white transition-colors border border-white/10"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
 
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 onOpenLightbox({ ...item, src: customSrc });
               }}
-              className="p-1.5 rounded-full bg-black/60 hover:bg-[#84572f] text-white/90 hover:text-white transition-colors border border-white/10"
+              className="p-1.5 rounded-full bg-black/70 hover:bg-[#84572f] text-white/90 hover:text-white transition-colors border border-white/10"
               title="Expand to Fullscreen Lightbox"
               aria-label="Expand to Fullscreen Lightbox"
             >
@@ -216,22 +200,22 @@ const CreativeExampleCard: React.FC<{
           </div>
         </div>
 
-        {/* Upload success notification */}
-        {showUploadSuccess && (
-          <div className="absolute top-12 left-3 right-3 z-30 bg-emerald-900/90 text-white text-[11px] py-1.5 px-3 rounded-lg flex items-center gap-2 border border-emerald-500/50 backdrop-blur-sm animate-in fade-in">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>Custom video loaded! Playing now.</span>
+        {/* Center Play Button for Image Poster View */}
+        {(isDriveEmbed || isInstagramEmbed) && (
+          <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+            <div className="w-14 h-14 rounded-full bg-[#84572f]/90 text-white flex items-center justify-center shadow-xl border border-white/20 group-hover:scale-110 transition-transform">
+              <Play className="w-6 h-6 fill-white ml-0.5" />
+            </div>
           </div>
         )}
 
-        {/* Bottom Interactive Playback Controls Bar */}
-        <div className="relative z-20 p-3.5 mt-auto">
-          {isVideo && (
+        {/* Bottom Playback Controls (For HTML5 Video) */}
+        {isHtmlVideo && (
+          <div className="relative z-20 p-3.5 mt-auto pointer-events-auto">
             <div 
               onClick={(e) => e.stopPropagation()} 
               className="bg-black/80 backdrop-blur-md rounded-xl p-2.5 text-white flex flex-col gap-1.5 border border-white/10"
             >
-              {/* Scrubber Progress Bar */}
               <div className="flex items-center gap-2">
                 <input
                   type="range"
@@ -244,7 +228,6 @@ const CreativeExampleCard: React.FC<{
                 />
               </div>
 
-              {/* Controls Row */}
               <div className="flex items-center justify-between text-xs pt-1">
                 <div className="flex items-center gap-2">
                   <button
@@ -271,8 +254,8 @@ const CreativeExampleCard: React.FC<{
                 </div>
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
       </div>
 
@@ -296,7 +279,7 @@ const CreativeExampleCard: React.FC<{
 
         <div className="mt-4 pt-3 border-t border-[#84572f]/10 flex items-center justify-between text-[11px]">
           <span className="text-[#84572f] font-semibold group-hover:underline flex items-center gap-1">
-            <span>Open in Lightbox</span>
+            <span>Play Video Reel</span>
             <span>&rarr;</span>
           </span>
           <span className="text-neutral-500 font-mono text-[10px]">9:16 VERTICAL</span>
@@ -319,24 +302,21 @@ export const FeaturedCampaign: React.FC<FeaturedCampaignProps> = ({
         {/* Header Block */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-[#84572f]/15">
           <div className="max-w-3xl">
-            {/* Eyebrow */}
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[#84572f] animate-pulse" />
               <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#84572f]">
                 FEATURED CAMPAIGN
               </span>
               <span className="text-xs text-[#1c1c1c]/50 font-normal">·</span>
-              <span className="text-xs text-[#84572f] font-semibold bg-[#f1d5a0]/40 px-2 py-0.5 rounded">
-                Interactive Video Player Active
+              <span className="text-xs text-[#84572f] font-semibold bg-[#f1d5a0]/40 px-2.5 py-0.5 rounded-full">
+                Featured Client Case Study
               </span>
             </div>
 
-            {/* Heading */}
             <h2 className="text-3xl sm:text-5xl font-extrabold text-[#141615] tracking-tight font-display">
               {campaign.brand}
             </h2>
 
-            {/* Subheading */}
             <p className="mt-2 text-xl sm:text-2xl text-[#84572f] font-medium font-body flex items-center gap-2">
               <span>A Campaign Featuring</span>
               <span className="font-semibold underline decoration-[#f1d5a0] decoration-2 underline-offset-4">
@@ -344,7 +324,6 @@ export const FeaturedCampaign: React.FC<FeaturedCampaignProps> = ({
               </span>
             </p>
 
-            {/* Description */}
             <p className="mt-4 text-sm sm:text-base text-[#1c1c1c]/80 leading-relaxed max-w-2xl">
               {campaign.shortDescription}
             </p>
@@ -361,28 +340,15 @@ export const FeaturedCampaign: React.FC<FeaturedCampaignProps> = ({
           </div>
         </div>
 
-        {/* Working Video Notice */}
-        <div className="my-8 p-4 rounded-xl bg-[#fcf5e9] border border-[#84572f]/20 flex items-start gap-3">
-          <AlertCircle className="w-5 h-5 text-[#84572f] shrink-0 mt-0.5" />
-          <div className="text-xs text-[#1c1c1c]/80 space-y-1">
-            <p className="font-semibold text-[#141615]">
-              Real 9:16 Video Player Controls &amp; Direct File Ingestion Active
-            </p>
-            <p>
-              Click Play or any card to play the creative video reels. You can also click the upload icon (↑) on any card to test your own campaign MP4 or MOV file directly in the browser!
-            </p>
-          </div>
-        </div>
-
-        {/* Four-Item Responsive Media Gallery with Playable Videos */}
+        {/* Four-Item Responsive Media Gallery */}
         <div className="mt-10">
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-lg font-bold text-[#141615] font-display flex items-center gap-2">
-              <span>Creative Examples</span>
-              <span className="text-xs font-normal text-[#1c1c1c]/60">(4 Designated Deliverable Slots)</span>
+              <span>Creative Deliverables</span>
+              <span className="text-xs font-normal text-[#1c1c1c]/60">(4 Campaign Deliverables)</span>
             </h3>
             <span className="text-xs text-[#84572f] font-medium hidden sm:inline-block">
-              Click any example to play or expand into fullscreen lightbox
+              Click any deliverable to play fullscreen
             </span>
           </div>
 

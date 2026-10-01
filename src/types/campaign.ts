@@ -8,10 +8,12 @@ export type PublicationStatus = 'published' | 'draft' | 'client_review';
 
 export interface CampaignMediaItem {
   id: string;
-  type: 'video' | 'image' | 'placeholder';
+  type: 'video' | 'image' | 'placeholder' | 'drive' | 'instagram';
   title: string;
   aspectRatio: '9:16' | '16:9' | '4:5' | '1:1' | '4:3';
   src?: string;
+  embedUrl?: string;
+  externalUrl?: string;
   poster?: string;
   caption?: string;
   collaborator?: string;

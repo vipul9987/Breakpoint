@@ -153,6 +153,8 @@ export const CampaignDetailModal: React.FC<CampaignDetailModalProps> = ({
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {campaign.mediaGallery.map((media) => {
+                const isDrive = media.type === 'drive' || Boolean(media.embedUrl && media.embedUrl.includes('drive.google.com'));
+                const isInstagram = media.type === 'instagram' || Boolean(media.embedUrl && media.embedUrl.includes('instagram.com'));
                 const isVideo = media.type === 'video' || Boolean(media.src && (media.src.endsWith('.mp4') || media.src.endsWith('.webm')));
 
                 return (
@@ -162,7 +164,20 @@ export const CampaignDetailModal: React.FC<CampaignDetailModalProps> = ({
                     className="group relative bg-[#141615] rounded-xl overflow-hidden cursor-pointer border border-[#84572f]/20 hover:border-[#84572f]/60 shadow-sm hover:shadow-md transition-all flex flex-col"
                   >
                     <div className={`relative w-full ${media.aspectRatio === '9:16' ? 'aspect-[9/16]' : 'aspect-square'} bg-[#1e201f] overflow-hidden flex flex-col items-center justify-center text-center`}>
-                      {isVideo && media.src ? (
+                      {isDrive || isInstagram ? (
+                        <div className="absolute inset-0 bg-black flex items-center justify-center">
+                          <iframe
+                            src={media.embedUrl || media.src}
+                            className="w-full h-full border-0 bg-black pointer-events-none"
+                            title={media.title}
+                          />
+                          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                            <div className="w-10 h-10 rounded-full bg-[#84572f]/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                              <Play className="w-4 h-4 fill-white ml-0.5" />
+                            </div>
+                          </div>
+                        </div>
+                      ) : isVideo && media.src ? (
                         <>
                           <video
                             src={media.src}
@@ -195,9 +210,6 @@ export const CampaignDetailModal: React.FC<CampaignDetailModalProps> = ({
                           <p className="text-xs font-bold text-white line-clamp-2 px-2">
                             {media.title}
                           </p>
-                          <span className="mt-2 text-[10px] text-amber-300 bg-black/60 px-2 py-0.5 rounded">
-                            Pending Asset Upload
-                          </span>
                         </div>
                       )}
 

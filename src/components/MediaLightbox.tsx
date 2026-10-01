@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { X, Play, Pause, Volume2, VolumeX, Maximize2, AlertCircle, Upload, CheckCircle2, RotateCcw } from 'lucide-react';
+import { X, Play, Pause, Volume2, VolumeX, Maximize2, AlertCircle, Upload, CheckCircle2, ExternalLink } from 'lucide-react';
 import { CampaignMediaItem } from '../types/campaign';
 
 interface MediaLightboxProps {
@@ -17,11 +17,11 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose, on
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const [activeSrc, setActiveSrc] = useState<string | undefined>(media?.src);
+  const [activeSrc, setActiveSrc] = useState<string | undefined>(media?.src || media?.embedUrl);
   const [showUploadAlert, setShowUploadAlert] = useState(false);
 
   useEffect(() => {
-    setActiveSrc(media?.src);
+    setActiveSrc(media?.src || media?.embedUrl);
     setIsPlaying(true);
     setProgress(0);
     setCurrentTime(0);
@@ -73,9 +73,7 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose, on
   const handleLoadedMetadata = () => {
     if (!videoRef.current) return;
     setDuration(videoRef.current.duration || 0);
-    // Auto-play on open
     videoRef.current.play().then(() => setIsPlaying(true)).catch(() => {
-      // Fallback to muted autoplay if browser blocks audio autoplay
       if (videoRef.current) {
         videoRef.current.muted = true;
         setIsMuted(true);
@@ -108,7 +106,7 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose, on
       setShowUploadAlert(true);
       setTimeout(() => setShowUploadAlert(false), 3000);
       if (onUpdateMedia) {
-        onUpdateMedia({ ...media, src: url, isPlaceholder: false });
+        onUpdateMedia({ ...media, src: url, type: 'video', isPlaceholder: false });
       }
       setTimeout(() => {
         if (videoRef.current) {
@@ -124,11 +122,13 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose, on
     return `${m}:${s < 10 ? '0' : ''}${s}`;
   };
 
-  const isVideo = media.type === 'video' || Boolean(activeSrc && (activeSrc.endsWith('.mp4') || activeSrc.endsWith('.webm') || activeSrc.startsWith('blob:')));
+  const isDriveEmbed = media.type === 'drive' || Boolean(activeSrc && activeSrc.includes('drive.google.com'));
+  const isInstagramEmbed = media.type === 'instagram' || Boolean(activeSrc && activeSrc.includes('instagram.com'));
+  const isHtmlVideo = media.type === 'video' || Boolean(activeSrc && (activeSrc.endsWith('.mp4') || activeSrc.endsWith('.webm') || activeSrc.startsWith('blob:')));
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-2 sm:p-6 animate-in fade-in duration-200"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-2 sm:p-6 animate-in fade-in duration-200"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -156,15 +156,29 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose, on
         </button>
 
         {/* Media Frame Viewport */}
-        <div className="flex-1 flex items-center justify-center p-3 sm:p-8 bg-black/50 min-h-[380px] sm:min-h-[520px]">
-          {isVideo && activeSrc ? (
-            /* 9:16 Portrait Container with Phone Bezel Framing */
-            <div className="relative w-full max-w-[320px] aspect-[9/16] bg-[#0a0a0a] rounded-3xl border-4 border-neutral-700/60 shadow-2xl overflow-hidden flex flex-col justify-between">
+        <div className="flex-1 flex items-center justify-center p-3 sm:p-8 bg-black/60 min-h-[420px] sm:min-h-[560px]">
+          {isDriveEmbed || isInstagramEmbed ? (
+            /* Clean Cropped 9:16 Video Player Container */
+            <div className="relative w-full max-w-[340px] aspect-[9/16] bg-black rounded-3xl border-4 border-neutral-700/60 shadow-2xl overflow-hidden flex items-center justify-center">
               
               {/* Phone speaker notch */}
+              <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-16 h-3 bg-neutral-800 rounded-full z-30 pointer-events-none" />
+
+              {/* Clean Cropped IFrame removing social comments & headers */}
+              <iframe
+                src={media.embedUrl || activeSrc}
+                className="w-[122%] h-[122%] border-0 bg-black scale-105 pointer-events-auto -mt-4"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowFullScreen
+                title={media.title}
+              />
+            </div>
+          ) : isHtmlVideo && activeSrc ? (
+            /* 9:16 Portrait Container with HTML5 Video */
+            <div className="relative w-full max-w-[320px] aspect-[9/16] bg-[#0a0a0a] rounded-3xl border-4 border-neutral-700/60 shadow-2xl overflow-hidden flex flex-col justify-between">
+              
               <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-16 h-3 bg-neutral-800 rounded-full z-20 pointer-events-none" />
 
-              {/* Real Playable HTML5 Video */}
               <video
                 ref={videoRef}
                 src={activeSrc}
@@ -179,10 +193,8 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose, on
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
-              {/* Dark subtle gradient for controls contrast */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 pointer-events-none" />
 
-              {/* Center Play/Pause Overlay Click Target */}
               <div 
                 onClick={togglePlay}
                 className={`absolute inset-0 flex items-center justify-center cursor-pointer transition-opacity duration-200 z-10 ${
@@ -198,7 +210,6 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose, on
                 </button>
               </div>
 
-              {/* Bottom Interactive Controls */}
               <div className="relative z-20 p-3 mt-auto">
                 <div className="bg-black/85 backdrop-blur-md rounded-xl p-3 flex flex-col gap-2 border border-white/10">
                   <div className="flex items-center gap-2">
@@ -252,7 +263,6 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose, on
 
             </div>
           ) : media.type === 'image' && media.src ? (
-            /* High-resolution Image View */
             <div className="relative max-w-lg w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-neutral-900">
               <img
                 src={media.src}
@@ -261,7 +271,6 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose, on
               />
             </div>
           ) : (
-            /* Fallback or Placeholder Slot */
             <div className="relative w-full max-w-md aspect-[16/10] bg-[#1a1c1b] rounded-2xl border border-white/10 flex flex-col items-center justify-center p-6 text-center">
               <div className="w-14 h-14 rounded-full bg-[#92ada4]/20 border border-[#92ada4]/40 flex items-center justify-center text-[#92ada4] mb-3">
                 <AlertCircle className="w-6 h-6" />
@@ -288,7 +297,7 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose, on
               <div className="flex items-center gap-2 text-xs text-[#f1d5a0] uppercase tracking-wider font-semibold mb-2">
                 <span>{media.aspectRatio} Aspect Ratio</span>
                 <span>·</span>
-                <span>{media.type.toUpperCase()}</span>
+                <span>CLEAN VIDEO REEL</span>
               </div>
 
               <h3 className="text-lg font-bold text-white leading-snug font-display">
@@ -319,6 +328,18 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose, on
                 Asset Actions
               </p>
 
+              {media.externalUrl && (
+                <a
+                  href={media.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2 px-3 text-xs font-semibold text-[#f1d5a0] bg-[#84572f]/40 hover:bg-[#84572f]/70 border border-[#f1d5a0]/30 rounded-lg flex items-center justify-center gap-2 transition-colors mb-2"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span>Open Original Post on {media.type === 'instagram' ? 'Instagram' : 'Google Drive'}</span>
+                </a>
+              )}
+
               {showUploadAlert && (
                 <div className="p-2 rounded bg-emerald-950/80 border border-emerald-500/50 text-[11px] text-emerald-300 flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
@@ -331,7 +352,7 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose, on
                 className="w-full py-2 px-3 text-xs font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/15 rounded-lg flex items-center justify-center gap-2 transition-colors"
               >
                 <Upload className="w-3.5 h-3.5 text-[#f1d5a0]" />
-                <span>Replace / Upload Client Video File</span>
+                <span>Replace / Upload Custom MP4 File</span>
               </button>
             </div>
           </div>
