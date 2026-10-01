@@ -1,0 +1,6 @@
+{
+  "name": "Breakpoint Social — Case Studies & Creative Campaigns",
+  "description": "Explore Breakpoint Social's creative campaigns, influencer collaborations, and social media marketing work.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
