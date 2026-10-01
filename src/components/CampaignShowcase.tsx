@@ -155,10 +155,10 @@ export const CampaignShowcase: React.FC<CampaignShowcaseProps> = ({
                     {/* Simulated Clean Frame for Campaign Preview */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#1c1e1d] to-[#121312] flex flex-col items-center justify-center p-6 text-center">
                       <div className="w-12 h-12 rounded-full bg-[#92ada4]/15 border border-[#92ada4]/30 flex items-center justify-center text-[#92ada4] mb-3 group-hover:scale-105 transition-transform">
-                        {item.category === 'Influencer Marketing' ? (
-                          <Sparkles className="w-5 h-5 text-[#f1d5a0]" />
-                        ) : item.category === 'Creative Production' ? (
+                        {item.category === 'Creative Production' ? (
                           <Film className="w-5 h-5 text-[#92ada4]" />
+                        ) : item.category === 'Social Media Management' ? (
+                          <Sparkles className="w-5 h-5 text-[#f1d5a0]" />
                         ) : (
                           <Layers className="w-5 h-5 text-[#84572f]" />
                         )}

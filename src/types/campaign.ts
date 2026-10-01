@@ -1,5 +1,4 @@
 export type CampaignCategory = 
-  | 'Influencer Marketing'
   | 'Creative Production'
   | 'Social Media Management'
   | 'Brand Development & Positioning'

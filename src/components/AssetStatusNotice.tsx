@@ -18,7 +18,7 @@ export const AssetStatusNotice: React.FC<AssetStatusNoticeProps> = ({
   // Form state for adding new campaign
   const [brand, setBrand] = useState('');
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState<CampaignCategory>('Influencer Marketing');
+  const [category, setCategory] = useState<CampaignCategory>('Creative Production');
   const [shortDescription, setShortDescription] = useState('');
   const [collaborators, setCollaborators] = useState('');
   const [services, setServices] = useState('Social Media Management, Creative Production');
@@ -247,7 +247,6 @@ export const AssetStatusNotice: React.FC<AssetStatusNoticeProps> = ({
                   onChange={e => setCategory(e.target.value as CampaignCategory)}
                   className="w-full px-3 py-2 text-xs bg-white rounded-lg border border-[#84572f]/20 focus:outline-none focus:border-[#84572f]"
                 >
-                  <option value="Influencer Marketing">Influencer Marketing</option>
                   <option value="Creative Production">Creative Production</option>
                   <option value="Social Media Management">Social Media Management</option>
                   <option value="Brand Development &amp; Positioning">Brand Development &amp; Positioning</option>

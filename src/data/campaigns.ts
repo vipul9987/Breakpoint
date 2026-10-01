@@ -5,7 +5,7 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
     id: 'lo-lo-estrin-fe',
     brand: 'Lo Lo Estrin Fe',
     title: 'Modern Women’s Health Awareness Campaign',
-    category: 'Influencer Marketing',
+    category: 'Creative Production',
     isFeatured: true,
     collaboratorNames: ['Serena Pitt'],
     shortDescription: 'A modern birth control education campaign in partnership with Bachelor in Paradise star Serena Pitt, creating candid, relatable conversations around reproductive wellness.',
@@ -13,9 +13,9 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
     objective: 'To normalize candid conversations about birth control options, dispel common prescription myths, and guide prospective patients toward informed discussions with their healthcare providers.',
     creativeApproach: 'Leveraging Serena Pitt’s authentic lifestyle presence to integrate discussions about daily wellness routines, honest OB/GYN experiences, and low-dose prescription information naturally into short-form video content.',
     servicesProvided: [
-      'Influencer Strategy & Talent Curation',
+      'Short-Form Video Production',
       'Pharma-Compliant Creative Production',
-      'Short-Form Video Concepting',
+      'Creative Concepting & Talent Alignment',
       'Creator Briefing & FTC/FDA Guideline Governance',
       'Paid Social Amplification & Whitelisting'
     ],
@@ -82,43 +82,6 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         isPlaceholder: false,
         placeholderReason: 'Creative Example 4 educational reel preview active.',
         caption: 'Clear, digestible educational reel breaking down what low-dose estrogen means in an accessible visual format.'
-      }
-    ]
-  },
-  {
-    id: 'asset-01-campaign',
-    brand: 'Client Asset 01',
-    title: 'Brand Activation & Influencer Collaboration [Intake Slot]',
-    category: 'Influencer Marketing',
-    driveAssetRef: 'Asset 01',
-    shortDescription: 'Dedicated intake container for Asset 01 provided by the client. Structured to display verified brand metadata upon file inspection.',
-    fullDescription: 'This case study slot is reserved for Asset 01 from the client drive submission. In accordance with Breakpoint Social verification protocol, all metrics, campaign summaries, and brand assets will be populated directly from client-approved materials.',
-    objective: 'Campaign objective to be extracted directly from client Asset 01 source documents.',
-    creativeApproach: 'Creative production and distribution strategy aligned with client specifications.',
-    servicesProvided: [
-      'Social Strategy',
-      'Creator Partnerships',
-      'Content Production'
-    ],
-    publicationStatus: 'draft',
-    displayOrder: 2,
-    clientNotes: 'Asset 01 link awaiting verification/access. Structured placeholder active per project specification.',
-    dateCreated: '2025-07',
-    thumbnail: {
-      type: 'placeholder',
-      aspectRatio: '16:9',
-      isPlaceholder: true,
-      placeholderLabel: 'Asset 01 Intake Slot · Awaiting File Inspection'
-    },
-    metrics: undefined,
-    mediaGallery: [
-      {
-        id: 'asset-01-item-1',
-        type: 'placeholder',
-        title: 'Asset 01 Primary Media',
-        aspectRatio: '16:9',
-        isPlaceholder: true,
-        placeholderReason: 'Awaiting client link or file access for Asset 01. No external stock images used.'
       }
     ]
   },
@@ -276,7 +239,6 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
 
 export const CAMPAIGN_CATEGORIES = [
   'All Work',
-  'Influencer Marketing',
   'Creative Production',
   'Social Media Management',
   'Brand Development & Positioning',
