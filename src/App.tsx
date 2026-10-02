@@ -20,8 +20,8 @@ export default function App() {
   const [lightboxMedia, setLightboxMedia] = useState<CampaignMediaItem | null>(null);
   const [isContactOpen, setIsContactOpen] = useState(false);
 
-  // Featured campaign is Lo Lo Estrin Fe
-  const featuredCampaign = campaigns.find(c => c.id === 'lo-lo-estrin-fe') || campaigns[0];
+  // Featured campaign
+  const featuredCampaign = campaigns.find(c => c.isFeatured) || campaigns[0];
 
   const handleScrollToCampaigns = () => {
     const el = document.getElementById('case-studies');

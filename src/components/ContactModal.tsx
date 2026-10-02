@@ -123,7 +123,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                     required
                     value={brand}
                     onChange={e => setBrand(e.target.value)}
-                    placeholder="e.g. Lo Lo Estrin Fe"
+                    placeholder="e.g. Brooks Running or Frankie's Burritos"
                     className="w-full px-3.5 py-2.5 text-xs bg-white rounded-xl border border-[#84572f]/20 focus:outline-none focus:border-[#84572f]"
                   />
                 </div>

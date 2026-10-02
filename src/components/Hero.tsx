@@ -65,7 +65,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToCampaigns, onSelectFeature
             onClick={onSelectFeatured}
             className="px-6 py-3.5 text-xs uppercase tracking-wider font-semibold text-[#84572f] hover:text-[#141615] bg-[#92ada4]/15 hover:bg-[#92ada4]/25 border border-[#84572f]/20 rounded-full transition-all duration-200 flex items-center justify-center gap-2"
           >
-            <span>Featured: Lo Lo Estrin Fe</span>
+            <span>Featured Case Study</span>
             <ChevronRight className="w-4 h-4 text-[#84572f]" />
           </button>
         </div>
