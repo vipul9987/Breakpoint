@@ -19,14 +19,17 @@ export const InstagramReelsGrid: React.FC<InstagramReelsGridProps> = ({ onOpenLi
   const handleOpenMedia = (reel: InstagramReelItem) => {
     const mediaItem: CampaignMediaItem = {
       id: reel.id,
-      type: 'instagram',
+      type: 'video',
       title: reel.title,
       aspectRatio: reel.aspectRatio,
-      embedUrl: reel.embedUrl,
-      externalUrl: reel.externalUrl,
-      poster: reel.coverImage,
-      src: reel.externalUrl,
-      caption: `Official Breakpoint Social campaign deliverable (${reel.category}).`
+      poster: reel.posterUrl || reel.coverImage,
+      posterUrl: reel.posterUrl || reel.coverImage,
+      videoUrl: reel.videoUrl,
+      src: reel.videoUrl,
+      talent: reel.talent,
+      format: reel.format,
+      description: reel.description,
+      caption: reel.description
     };
     onOpenLightbox(mediaItem);
   };
@@ -45,7 +48,7 @@ export const InstagramReelsGrid: React.FC<InstagramReelsGridProps> = ({ onOpenLi
               </span>
               <span className="text-xs text-white/40">·</span>
               <span className="text-xs text-white/80 font-mono bg-white/10 px-2.5 py-0.5 rounded-full border border-white/15">
-                16 Video Deliverables
+                {INSTAGRAM_REELS_LIST.length} Video Deliverables
               </span>
             </div>
 
@@ -54,7 +57,7 @@ export const InstagramReelsGrid: React.FC<InstagramReelsGridProps> = ({ onOpenLi
             </h2>
 
             <p className="mt-4 text-base sm:text-lg text-white/80 leading-relaxed">
-              Explore 16 vertical short-form video deliverables created and produced by Breakpoint Social. Click any deliverable for instant playback.
+              Explore {INSTAGRAM_REELS_LIST.length} vertical short-form video deliverables created and produced by Breakpoint Social. Click any deliverable for instant playback.
             </p>
           </div>
         </div>

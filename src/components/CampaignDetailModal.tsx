@@ -155,7 +155,7 @@ export const CampaignDetailModal: React.FC<CampaignDetailModalProps> = ({
               {campaign.mediaGallery.map((media) => {
                 const isDrive = media.type === 'drive' || Boolean(media.embedUrl && media.embedUrl.includes('drive.google.com'));
                 const isInstagram = media.type === 'instagram' || Boolean(media.embedUrl && media.embedUrl.includes('instagram.com'));
-                const isVideo = media.type === 'video' || Boolean(media.src && (media.src.endsWith('.mp4') || media.src.endsWith('.webm')));
+                const isVideo = media.type === 'video' || Boolean(media.src && (media.src.includes('.mp4') || media.src.includes('.webm')));
 
                 return (
                   <div
@@ -166,19 +166,15 @@ export const CampaignDetailModal: React.FC<CampaignDetailModalProps> = ({
                     <div className={`relative w-full ${media.aspectRatio === '9:16' ? 'aspect-[9/16]' : 'aspect-square'} bg-[#1e201f] overflow-hidden flex flex-col items-center justify-center text-center`}>
                       {isDrive || isInstagram ? (
                         <div className="absolute inset-0 bg-black flex items-center justify-center overflow-hidden">
-                          {media.poster ? (
+                          {media.poster || media.posterUrl ? (
                             <img
-                              src={media.poster}
+                              src={media.poster || media.posterUrl}
                               alt={media.title}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                             />
                           ) : (
-                            <div className="absolute inset-0 overflow-hidden flex items-center justify-center">
-                              <iframe
-                                src={media.embedUrl || media.src}
-                                className="w-[125%] h-[185%] border-0 bg-black pointer-events-none -mt-[48px] -mb-[260px] object-cover"
-                                title={media.title}
-                              />
+                            <div className="absolute inset-0 bg-neutral-900 flex items-center justify-center">
+                              <Play className="w-8 h-8 text-[#f1d5a0]" />
                             </div>
                           )}
                           <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">

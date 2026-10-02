@@ -80,7 +80,7 @@ const CreativeExampleCard: React.FC<{
 
   const isDriveEmbed = item.type === 'drive' || Boolean(customSrc && customSrc.includes('drive.google.com'));
   const isInstagramEmbed = item.type === 'instagram' || Boolean(customSrc && customSrc.includes('instagram.com'));
-  const isHtmlVideo = item.type === 'video' || Boolean(customSrc && (customSrc.endsWith('.mp4') || customSrc.endsWith('.webm') || customSrc.startsWith('blob:')));
+  const isHtmlVideo = item.type === 'video' || Boolean(customSrc && (customSrc.includes('.mp4') || customSrc.includes('.webm') || customSrc.startsWith('blob:')));
 
   return (
     <div
@@ -90,32 +90,12 @@ const CreativeExampleCard: React.FC<{
       {/* 9:16 Portrait Container */}
       <div className="relative w-full aspect-[9/16] bg-[#141615] overflow-hidden flex flex-col justify-between">
         
-        {isDriveEmbed || isInstagramEmbed ? (
-          /* High resolution cover photo or embedded video iframe */
-          <div className="absolute inset-0 bg-neutral-900 overflow-hidden flex items-center justify-center">
-            {item.poster ? (
-              <img
-                src={item.poster}
-                alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            ) : (
-              <iframe
-                src={item.embedUrl || customSrc}
-                className="w-full h-full border-0 bg-black pointer-events-auto"
-                allow="autoplay; encrypted-media; picture-in-picture"
-                allowFullScreen
-                title={item.title}
-              />
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 group-hover:via-black/10 transition-colors pointer-events-none" />
-          </div>
-        ) : isHtmlVideo && customSrc ? (
+        {isHtmlVideo && customSrc ? (
           <>
             <video
               ref={videoRef}
               src={customSrc}
-              poster={item.poster}
+              poster={item.poster || item.posterUrl}
               playsInline
               loop
               muted={isMuted}
@@ -143,6 +123,21 @@ const CreativeExampleCard: React.FC<{
               </button>
             </div>
           </>
+        ) : (item.poster || item.posterUrl) ? (
+          /* High resolution cover photo */
+          <div className="absolute inset-0 bg-neutral-900 overflow-hidden flex items-center justify-center">
+            <img
+              src={item.poster || item.posterUrl}
+              alt={item.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 group-hover:via-black/10 transition-colors pointer-events-none" />
+            <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+              <div className="w-14 h-14 rounded-full bg-[#84572f]/90 text-white flex items-center justify-center shadow-xl border border-white/20 group-hover:scale-110 transition-transform">
+                <Play className="w-6 h-6 fill-white ml-0.5" />
+              </div>
+            </div>
+          </div>
         ) : item.type === 'image' && item.src ? (
           <div className="absolute inset-0 bg-neutral-900">
             <img
@@ -173,18 +168,6 @@ const CreativeExampleCard: React.FC<{
           </span>
 
           <div className="flex items-center gap-1.5 pointer-events-auto">
-            {item.externalUrl && (
-              <a
-                href={item.externalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                title={`Open in ${item.type === 'instagram' ? 'Instagram' : 'Google Drive'}`}
-                className="p-1.5 rounded-full bg-black/70 hover:bg-[#84572f] text-white/90 hover:text-white transition-colors border border-white/10"
-              >
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            )}
 
             <button
               onClick={(e) => {

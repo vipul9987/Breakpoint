@@ -12,6 +12,11 @@ export interface CampaignMediaItem {
   title: string;
   aspectRatio: '9:16' | '16:9' | '4:5' | '1:1' | '4:3';
   src?: string;
+  videoUrl?: string;
+  posterUrl?: string;
+  talent?: string;
+  format?: string;
+  description?: string;
   embedUrl?: string;
   externalUrl?: string;
   poster?: string;
