@@ -165,15 +165,25 @@ export const CampaignDetailModal: React.FC<CampaignDetailModalProps> = ({
                   >
                     <div className={`relative w-full ${media.aspectRatio === '9:16' ? 'aspect-[9/16]' : 'aspect-square'} bg-[#1e201f] overflow-hidden flex flex-col items-center justify-center text-center`}>
                       {isDrive || isInstagram ? (
-                        <div className="absolute inset-0 bg-black flex items-center justify-center">
-                          <iframe
-                            src={media.embedUrl || media.src}
-                            className="w-full h-full border-0 bg-black pointer-events-none"
-                            title={media.title}
-                          />
-                          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                            <div className="w-10 h-10 rounded-full bg-[#84572f]/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                              <Play className="w-4 h-4 fill-white ml-0.5" />
+                        <div className="absolute inset-0 bg-black flex items-center justify-center overflow-hidden">
+                          {media.poster ? (
+                            <img
+                              src={media.poster}
+                              alt={media.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                            />
+                          ) : (
+                            <div className="absolute inset-0 overflow-hidden flex items-center justify-center">
+                              <iframe
+                                src={media.embedUrl || media.src}
+                                className="w-[125%] h-[185%] border-0 bg-black pointer-events-none -mt-[48px] -mb-[260px] object-cover"
+                                title={media.title}
+                              />
+                            </div>
+                          )}
+                          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                            <div className="w-12 h-12 rounded-full bg-[#84572f]/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform border border-white/20">
+                              <Play className="w-5 h-5 fill-white ml-0.5" />
                             </div>
                           </div>
                         </div>

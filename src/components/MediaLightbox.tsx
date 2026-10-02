@@ -136,14 +136,21 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose }) 
               {/* Phone speaker notch */}
               <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-16 h-3 bg-neutral-800 rounded-full z-30 pointer-events-none" />
 
-              {/* IFrame tightly cropped to display 100% video without likes or comments */}
-              <iframe
-                src={media.embedUrl || activeSrc}
-                className="w-[136%] h-[138%] border-0 bg-black scale-110 pointer-events-auto -mt-[46px] -mb-[52px]"
-                allow="autoplay; encrypted-media; picture-in-picture"
-                allowFullScreen
-                title={media.title}
-              />
+              {/* Tightly cropped iframe pushing all caption/likes/comments area completely outside overflow boundary */}
+              <div className="absolute inset-0 overflow-hidden flex items-center justify-center bg-black">
+                <iframe
+                  src={media.embedUrl || activeSrc}
+                  className="w-[125%] h-[185%] border-0 bg-black pointer-events-auto -mt-[48px] -mb-[260px] object-cover"
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  allowFullScreen
+                  title={media.title}
+                />
+              </div>
+
+              {/* Bottom Bezel Masking Overlay ensuring 0% of likes/comments can ever peek through */}
+              <div className="absolute bottom-0 inset-x-0 h-14 bg-black z-30 pointer-events-none flex items-center justify-center border-t border-white/10">
+                <span className="text-[10px] text-[#f1d5a0] font-mono tracking-widest uppercase font-semibold">9:16 Pure Video Stream</span>
+              </div>
             </div>
           ) : isHtmlVideo && activeSrc ? (
             /* 9:16 Portrait Container with Pure HTML5 Video */
