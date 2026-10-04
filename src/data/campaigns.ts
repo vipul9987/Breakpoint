@@ -325,6 +325,116 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
       highlight: 'Pharma-Compliant 210K+ Reach',
       summary: '210K+ reach while maintaining strict FDA/FTC compliance and candid reproductive wellness engagement.'
     }
+  },
+  {
+    id: 'reel-15',
+    reelCode: 'tavern101_margarita',
+    title: 'Tavern 101 Grill · Craft Watermelon Margarita Mixology',
+    category: 'Creative Production',
+    videoUrl: '/videos/tavern101_margarita.mp4',
+    posterUrl: '/thumbnails/tavern101_margarita.jpg',
+    talent: 'Tavern 101 American Grill',
+    format: '9:16 Vertical HD',
+    description: 'Step-by-step craft mixology deliverable highlighting the signature fresh watermelon margarita, salted rim, and premium cocktail presentation.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/tavern101_margarita.jpg',
+    analytics: {
+      views: '64K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '91%',
+      interactions: '5.8K',
+      followersGained: '+175',
+      highlight: 'Cocktail Recipe ASMR & High Discovery',
+      summary: 'Dynamic mixology reel driving 64K+ views and a 91% non-follower discovery rate for weekend bar promotions.'
+    }
+  },
+  {
+    id: 'reel-16',
+    reelCode: 'tavern101_bartender_gossip',
+    title: 'Tavern 101 Grill · Bar Culture & Late-Night Vibes',
+    category: 'Social Media Management',
+    videoUrl: '/videos/tavern101_bartender_gossip.mp4',
+    posterUrl: '/thumbnails/tavern101_bartender_gossip.jpg',
+    talent: 'Tavern 101 American Grill',
+    format: '9:16 Vertical HD',
+    description: 'Relatable bar comedy and community-driven short-form reel capturing the lively late-night energy and friendly neighborhood bartenders.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/tavern101_bartender_gossip.jpg',
+    analytics: {
+      views: '82K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '88%',
+      interactions: '7.4K',
+      followersGained: '+260',
+      highlight: 'Viral Hospitality Humor',
+      summary: 'High-relatability hospitality comedy generated 82K+ views with massive comment-section engagement and shares.'
+    }
+  },
+  {
+    id: 'reel-17',
+    reelCode: 'tavern101_owner_bts',
+    title: 'Tavern 101 Grill · Behind The Scenes: Founder & Kitchen Shoot',
+    category: 'Brand Development & Positioning',
+    videoUrl: '/videos/tavern101_owner_bts.mp4',
+    posterUrl: '/thumbnails/tavern101_owner_bts.jpg',
+    talent: 'Tavern 101 American Grill',
+    format: '9:16 Vertical HD',
+    description: 'Behind-the-scenes founder reel showing Breakpoint Social on-location production outside the iconic Tavern 101 landmark tower.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/tavern101_owner_bts.jpg',
+    analytics: {
+      views: '41K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '83%',
+      interactions: '3.2K',
+      followersGained: '+115',
+      highlight: 'Local Brand Authenticity',
+      summary: 'Authentic behind-the-scenes content humanizing the brand and establishing local Agoura Hills community resonance.'
+    }
+  },
+  {
+    id: 'reel-18',
+    reelCode: 'simihills_hole18_par5',
+    title: 'Simi Hills Golf Course · Hole 18 Par 5 Fairway Flyover',
+    category: 'Event Marketing',
+    videoUrl: '/videos/simihills_hole18_par5.mp4',
+    posterUrl: '/thumbnails/simihills_hole18_par5.jpg',
+    talent: 'Simi Hills Golf Course',
+    format: '9:16 Vertical HD',
+    description: 'Cinematic fairway course walkthrough highlighting Hole 18 Par 5, rolling greens, and premier Southern California golf conditions.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/simihills_hole18_par5.jpg',
+    analytics: {
+      views: '53K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '87%',
+      interactions: '4.1K',
+      followersGained: '+140',
+      highlight: 'Tee Time Booking Surge',
+      summary: 'Visual course highlight driving 53K+ views and direct weekend tee time booking inquiries among local golfers.'
+    }
+  },
+  {
+    id: 'reel-19',
+    reelCode: 'breakpoint_culinary_prep',
+    title: 'Artisanal Kitchen · Chef Scratch Dough & Culinary Craft',
+    category: 'Creative Production',
+    videoUrl: '/videos/breakpoint_culinary_prep.mp4',
+    posterUrl: '/thumbnails/breakpoint_culinary_prep.jpg',
+    talent: 'Breakpoint Social Culinary Partner',
+    format: '9:16 Vertical HD',
+    description: 'Sensory slow-motion culinary reel capturing scratch-made artisan baking, flour dusting, and kitchen dedication.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/breakpoint_culinary_prep.jpg',
+    analytics: {
+      views: '76K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '90%',
+      interactions: '6.7K',
+      followersGained: '+210',
+      highlight: 'Sensory ASMR Pacing',
+      summary: 'High aesthetic culinary video driving 76K+ views with 90% non-follower discovery and exceptional watch completion rates.'
+    }
   }
 ];
 
@@ -562,6 +672,30 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
           followersGained: '+195',
           highlight: 'Viral Sports-Dining Crossover',
           summary: 'Viral golf pro tee-off stunt resulting in 98K+ views and top organic share-to-view ratio in Simi Valley.'
+        }
+      },
+      {
+        id: 'grill-ex-4',
+        type: 'video',
+        title: 'Simi Hills Golf Course · Hole 18 Par 5 Fairway Flyover',
+        aspectRatio: '9:16',
+        videoUrl: '/videos/simihills_hole18_par5.mp4',
+        posterUrl: '/thumbnails/simihills_hole18_par5.jpg',
+        poster: '/thumbnails/simihills_hole18_par5.jpg',
+        src: '/videos/simihills_hole18_par5.mp4',
+        talent: 'Simi Hills Golf Course',
+        format: '9:16 Vertical HD',
+        description: 'Cinematic fairway course walkthrough highlighting Hole 18 Par 5, rolling greens, and premier Southern California golf conditions.',
+        caption: 'Cinematic fairway course walkthrough highlighting Hole 18 Par 5, rolling greens, and premier Southern California golf conditions.',
+        isPlaceholder: false,
+        analytics: {
+          views: '53K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '87%',
+          interactions: '4.1K',
+          followersGained: '+140',
+          highlight: 'Tee Time Booking Surge',
+          summary: 'Visual course highlight driving 53K+ views and direct weekend tee time booking inquiries among local golfers.'
         }
       }
     ]
@@ -820,6 +954,107 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
           followersGained: '+620',
           highlight: 'Pharma-Compliant 210K+ Reach',
           summary: '210K+ reach while maintaining strict FDA/FTC compliance and candid reproductive wellness engagement.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'tavern-101-grill',
+    brand: 'Tavern 101 American Grill',
+    title: 'Cocktail Mixology, Bar Culture & Local Restaurant Buzz',
+    category: 'Creative Production',
+    shortDescription: 'Dynamic restaurant social presence combining signature craft cocktail mixology, relatable hospitality humor, and behind-the-scenes founder stories.',
+    fullDescription: 'Tavern 101 American Grill in Agoura Hills teamed up with Breakpoint Social to transform their local dining awareness into sustained foot traffic and vibrant weekend bar crowds. Through mouthwatering drink builds, engaging bartender interactions, and founder authenticity, we elevated their community standing across Southern California.',
+    objective: 'Boost happy hour and weekend bar foot traffic while creating viral hospitality engagement among local diners.',
+    creativeApproach: 'Pairing fast-paced craft mixology ASMR with hilarious, relatable bar interactions that drive organic comments and friend tags.',
+    servicesProvided: [
+      'Short-Form Video Production',
+      'Cocktail Mixology Content',
+      'Local Social Media Strategy',
+      'Behind-The-Scenes Production'
+    ],
+    publicationStatus: 'published',
+    displayOrder: 4,
+    dateCreated: '2025-08',
+    thumbnail: {
+      type: 'video',
+      aspectRatio: '9:16',
+      src: '/videos/tavern101_margarita.mp4',
+      isPlaceholder: false,
+      placeholderLabel: 'Tavern 101 · Watermelon Margarita'
+    },
+    metrics: undefined,
+    mediaGallery: [
+      {
+        id: 'tavern-ex-1',
+        type: 'video',
+        title: 'Tavern 101 Grill · Craft Watermelon Margarita Mixology',
+        aspectRatio: '9:16',
+        videoUrl: '/videos/tavern101_margarita.mp4',
+        posterUrl: '/thumbnails/tavern101_margarita.jpg',
+        poster: '/thumbnails/tavern101_margarita.jpg',
+        src: '/videos/tavern101_margarita.mp4',
+        talent: 'Tavern 101 American Grill',
+        format: '9:16 Vertical HD',
+        description: 'Step-by-step craft mixology deliverable highlighting the signature fresh watermelon margarita, salted rim, and premium cocktail presentation.',
+        caption: 'Step-by-step craft mixology deliverable highlighting the signature fresh watermelon margarita, salted rim, and premium cocktail presentation.',
+        isPlaceholder: false,
+        analytics: {
+          views: '64K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '91%',
+          interactions: '5.8K',
+          followersGained: '+175',
+          highlight: 'Cocktail Recipe ASMR & High Discovery',
+          summary: 'Dynamic mixology reel driving 64K+ views and a 91% non-follower discovery rate for weekend bar promotions.'
+        }
+      },
+      {
+        id: 'tavern-ex-2',
+        type: 'video',
+        title: 'Tavern 101 Grill · Bar Culture & Late-Night Vibes',
+        aspectRatio: '9:16',
+        videoUrl: '/videos/tavern101_bartender_gossip.mp4',
+        posterUrl: '/thumbnails/tavern101_bartender_gossip.jpg',
+        poster: '/thumbnails/tavern101_bartender_gossip.jpg',
+        src: '/videos/tavern101_bartender_gossip.mp4',
+        talent: 'Tavern 101 American Grill',
+        format: '9:16 Vertical HD',
+        description: 'Relatable bar comedy and community-driven short-form reel capturing the lively late-night energy and friendly neighborhood bartenders.',
+        caption: 'Relatable bar comedy and community-driven short-form reel capturing the lively late-night energy and friendly neighborhood bartenders.',
+        isPlaceholder: false,
+        analytics: {
+          views: '82K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '88%',
+          interactions: '7.4K',
+          followersGained: '+260',
+          highlight: 'Viral Hospitality Humor',
+          summary: 'High-relatability hospitality comedy generated 82K+ views with massive comment-section engagement and shares.'
+        }
+      },
+      {
+        id: 'tavern-ex-3',
+        type: 'video',
+        title: 'Tavern 101 Grill · Behind The Scenes: Founder & Kitchen Shoot',
+        aspectRatio: '9:16',
+        videoUrl: '/videos/tavern101_owner_bts.mp4',
+        posterUrl: '/thumbnails/tavern101_owner_bts.jpg',
+        poster: '/thumbnails/tavern101_owner_bts.jpg',
+        src: '/videos/tavern101_owner_bts.mp4',
+        talent: 'Tavern 101 American Grill',
+        format: '9:16 Vertical HD',
+        description: 'Behind-the-scenes founder reel showing Breakpoint Social on-location production outside the iconic Tavern 101 landmark tower.',
+        caption: 'Behind-the-scenes founder reel showing Breakpoint Social on-location production outside the iconic Tavern 101 landmark tower.',
+        isPlaceholder: false,
+        analytics: {
+          views: '41K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '83%',
+          interactions: '3.2K',
+          followersGained: '+115',
+          highlight: 'Local Brand Authenticity',
+          summary: 'Authentic behind-the-scenes content humanizing the brand and establishing local Agoura Hills community resonance.'
         }
       }
     ]
