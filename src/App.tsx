@@ -4,6 +4,7 @@ import { Hero } from './components/Hero';
 import { FeaturedCampaign } from './components/FeaturedCampaign';
 import { InstagramReelsGrid } from './components/InstagramReelsGrid';
 import { CampaignShowcase } from './components/CampaignShowcase';
+import { ResultsSection } from './components/ResultsSection';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { MediaLightbox } from './components/MediaLightbox';
@@ -78,7 +79,10 @@ export default function App() {
           onUpdateMediaItem={handleUpdateMediaItem}
         />
 
-        {/* Section 03: Dedicated 16 Instagram Reels Showcase Grid */}
+        {/* Section 03: Verified Client Results & Performance Metrics */}
+        <ResultsSection onOpenContact={() => setIsContactOpen(true)} />
+
+        {/* Section 04: Dedicated Instagram Reels Showcase Grid */}
         <InstagramReelsGrid
           onOpenLightbox={(media) => setLightboxMedia(media)}
         />

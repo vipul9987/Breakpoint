@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, Film } from 'lucide-react';
+import { Play, Film, TrendingUp, BarChart3 } from 'lucide-react';
 import { INSTAGRAM_REELS_LIST, InstagramReelItem } from '../data/campaigns';
 import { CampaignMediaItem } from '../types/campaign';
 
@@ -29,7 +29,8 @@ export const InstagramReelsGrid: React.FC<InstagramReelsGridProps> = ({ onOpenLi
       talent: reel.talent,
       format: reel.format,
       description: reel.description,
-      caption: reel.description
+      caption: reel.description,
+      analytics: reel.analytics
     };
     onOpenLightbox(mediaItem);
   };
@@ -112,6 +113,21 @@ export const InstagramReelsGrid: React.FC<InstagramReelsGridProps> = ({ onOpenLi
                   </span>
                 </div>
 
+                {/* Deliverable Performance Analytics Badges */}
+                {reel.analytics && (
+                  <div className="absolute top-11 left-3.5 right-3.5 z-10 flex flex-wrap items-center gap-1.5 pointer-events-none">
+                    <span className="px-2 py-0.5 rounded-md text-[10px] font-bold font-mono bg-black/85 text-[#f1d5a0] backdrop-blur-md border border-[#f1d5a0]/30 shadow-md flex items-center gap-1">
+                      <TrendingUp className="w-3 h-3 text-[#f1d5a0]" />
+                      <span>{reel.analytics.views}</span>
+                    </span>
+                    {reel.analytics.nonFollowerReach && (
+                      <span className="px-2 py-0.5 rounded-md text-[9px] font-medium font-mono bg-black/85 text-emerald-300 backdrop-blur-md border border-emerald-500/30 shadow-md">
+                        {reel.analytics.nonFollowerReach} Discovery
+                      </span>
+                    )}
+                  </div>
+                )}
+
                 {/* Center Glowing Play Icon */}
                 <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
                   <div className="w-16 h-16 rounded-full bg-[#84572f]/90 group-hover:bg-[#84572f] text-white flex items-center justify-center shadow-2xl border border-white/20 transition-transform duration-300 group-hover:scale-110">
@@ -131,6 +147,19 @@ export const InstagramReelsGrid: React.FC<InstagramReelsGridProps> = ({ onOpenLi
                   </h3>
                 </div>
               </div>
+
+              {/* Deliverable Analytics Highlight */}
+              {reel.analytics && (
+                <div className="px-3.5 py-2 bg-[#121413] border-t border-white/5 flex items-center justify-between text-[11px]">
+                  <span className="text-[#f1d5a0] font-mono font-semibold flex items-center gap-1">
+                    <BarChart3 className="w-3 h-3 text-[#f1d5a0]" />
+                    <span>{reel.analytics.views} views</span>
+                  </span>
+                  <span className="text-white/60 text-[10px] truncate max-w-[150px] font-medium" title={reel.analytics.highlight}>
+                    {reel.analytics.highlight}
+                  </span>
+                </div>
+              )}
 
               {/* Card Footer */}
               <div className="p-3.5 bg-[#181a19] border-t border-white/10 flex items-center justify-between text-xs text-white/80">

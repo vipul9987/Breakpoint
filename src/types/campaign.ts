@@ -6,6 +6,16 @@ export type CampaignCategory =
 
 export type PublicationStatus = 'published' | 'draft' | 'client_review';
 
+export interface DeliverableAnalytics {
+  views: string;
+  viewsContext?: string;
+  nonFollowerReach?: string;
+  interactions?: string;
+  followersGained?: string;
+  highlight?: string;
+  summary?: string;
+}
+
 export interface CampaignMediaItem {
   id: string;
   type: 'video' | 'image' | 'placeholder' | 'drive' | 'instagram';
@@ -17,6 +27,7 @@ export interface CampaignMediaItem {
   talent?: string;
   format?: string;
   description?: string;
+  analytics?: DeliverableAnalytics;
   embedUrl?: string;
   externalUrl?: string;
   poster?: string;

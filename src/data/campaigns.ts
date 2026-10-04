@@ -1,4 +1,4 @@
-import { Campaign, CampaignMediaItem } from '../types/campaign';
+import { Campaign, CampaignMediaItem, DeliverableAnalytics } from '../types/campaign';
 
 export interface InstagramReelItem {
   id: string;
@@ -12,6 +12,7 @@ export interface InstagramReelItem {
   description: string;
   aspectRatio: '9:16' | '4:5' | '1:1';
   coverImage: string;
+  analytics?: DeliverableAnalytics;
   embedUrl?: string;
   externalUrl?: string;
 }
@@ -28,7 +29,16 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
     format: '9:16 Vertical HD',
     description: 'Candid lunchtime showcase highlighting artisanal sub sandwich craftsmanship, freshly baked bread, and local food culture in San Diego.',
     aspectRatio: '9:16',
-    coverImage: '/thumbnails/DUGu1FSgQd3.jpg'
+    coverImage: '/thumbnails/DUGu1FSgQd3.jpg',
+    analytics: {
+      views: '57K+',
+      viewsContext: 'views on single deliverable',
+      nonFollowerReach: '92%',
+      interactions: '3.4K',
+      followersGained: '+184',
+      highlight: '57K+ Single Deliverable Views',
+      summary: 'Captured 57K+ organic views with 92% non-follower reach, driving record in-store lunchtime traffic across San Diego.'
+    }
   },
   {
     id: 'reel-2',
@@ -41,7 +51,16 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
     format: '9:16 Vertical HD',
     description: 'Sensory food ASMR video featuring the signature crispy toasted tortilla and melted breakfast fillings sliced with high-fidelity audio.',
     aspectRatio: '9:16',
-    coverImage: '/thumbnails/DVeOXQuj2pd.jpg'
+    coverImage: '/thumbnails/DVeOXQuj2pd.jpg',
+    analytics: {
+      views: '139K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '89%',
+      interactions: '12K+',
+      followersGained: '+340',
+      highlight: '139K+ Views · 89% Discovery',
+      summary: 'Generated 139K+ views and 12K+ interactions with 89% non-follower discovery across Southern California.'
+    }
   },
   {
     id: 'reel-3',
@@ -54,7 +73,16 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
     format: '9:16 Vertical HD',
     description: 'High-energy kitchen reel showcasing freshly prepared spicy burritos hot off the flat top grill ready for Agoura Hills lunch hour.',
     aspectRatio: '9:16',
-    coverImage: '/thumbnails/DU1Nqkskqkv.jpg'
+    coverImage: '/thumbnails/DU1Nqkskqkv.jpg',
+    analytics: {
+      views: '48K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '84%',
+      interactions: '3.1K',
+      followersGained: '+92',
+      highlight: 'Lunchtime Conversion Spike',
+      summary: 'Direct lunchtime promotional reel driving instant foot traffic and 48K+ targeted impressions in Agoura Hills.'
+    }
   },
   {
     id: 'reel-4',
@@ -67,7 +95,16 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
     format: '9:16 Vertical HD',
     description: 'Behind-the-scenes authenticity reel highlighting scratch-made ingredients, handcrafted tortillas, and local culinary pride.',
     aspectRatio: '9:16',
-    coverImage: '/thumbnails/DUthoHbEnjN.jpg'
+    coverImage: '/thumbnails/DUthoHbEnjN.jpg',
+    analytics: {
+      views: '52K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '86%',
+      interactions: '4.2K',
+      followersGained: '+115',
+      highlight: 'Local Craft & Brand Loyalty',
+      summary: 'Behind-the-scenes kitchen craft reel driving 52K+ impressions and enduring local brand trust.'
+    }
   },
   {
     id: 'reel-5',
@@ -80,7 +117,16 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
     format: '9:16 Vertical HD',
     description: 'Community lifestyle deliverable welcoming Simi Valley locals to enjoy weekend live music, gourmet burgers, and slow-smoked barbecue on the patio.',
     aspectRatio: '9:16',
-    coverImage: '/thumbnails/DXztiY9hv9b.jpg'
+    coverImage: '/thumbnails/DXztiY9hv9b.jpg',
+    analytics: {
+      views: '84K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '88%',
+      interactions: '6.4K',
+      followersGained: '+631',
+      highlight: '+631 New Followers in 30 Days',
+      summary: 'Drove +631 new local followers and 84K+ views ahead of weekend live music and patio dining.'
+    }
   },
   {
     id: 'reel-6',
@@ -93,7 +139,16 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
     format: '9:16 Vertical HD',
     description: 'Disruptive humor hook proving that 200° pressure wash disinfection leaves trash bins so sparkling clean you could let kids swim in them.',
     aspectRatio: '9:16',
-    coverImage: '/thumbnails/Dbv5PohD_xq.jpg'
+    coverImage: '/thumbnails/Dbv5PohD_xq.jpg',
+    analytics: {
+      views: '112K+',
+      viewsContext: 'viral organic spike',
+      nonFollowerReach: '93%',
+      interactions: '7.8K',
+      followersGained: '+240',
+      highlight: '112K+ Views · 93% Non-Followers',
+      summary: 'Disruptive humor hook driving 112K+ views and a 3.2x increase in bio-link residential sanitation inquiries.'
+    }
   },
   {
     id: 'reel-7',
@@ -106,7 +161,16 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
     format: '9:16 Vertical HD',
     description: 'High-engagement viral golf hook pairing a crispy buffalo chicken wing with a driver tee-off shot, merging golf entertainment with restaurant marketing.',
     aspectRatio: '9:16',
-    coverImage: '/thumbnails/DYIBFIvxoZ5.jpg'
+    coverImage: '/thumbnails/DYIBFIvxoZ5.jpg',
+    analytics: {
+      views: '98K+',
+      viewsContext: 'single video deliverable',
+      nonFollowerReach: '94%',
+      interactions: '8.7K',
+      followersGained: '+195',
+      highlight: 'Viral Sports-Dining Crossover',
+      summary: 'Viral golf pro tee-off stunt resulting in 98K+ views and top organic share-to-view ratio in Simi Valley.'
+    }
   },
   {
     id: 'reel-8',
@@ -117,9 +181,18 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
     posterUrl: '/thumbnails/DYfk-fkvdPr.jpg',
     talent: 'Grill on the Green Pitmasters',
     format: '9:16 Vertical HD',
-    description: 'Slow-smoked barbecue showcase focusing on mouthwatering brisket bark, tender fall-off-the-bone ribs, and authentic smokehouse technique.',
+    description: 'Slow-smoked barbecue showcase focusing on mouthwatering brisket bark, tender fall-off-the-bone ribs, and authentic pitmaster technique.',
     aspectRatio: '9:16',
-    coverImage: '/thumbnails/DYfk-fkvdPr.jpg'
+    coverImage: '/thumbnails/DYfk-fkvdPr.jpg',
+    analytics: {
+      views: '76K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '91%',
+      interactions: '5.9K',
+      followersGained: '+160',
+      highlight: '91% Non-Follower Discovery',
+      summary: '91% non-follower discovery with high completion rate on slow-smoked barbecue brisket and ribs.'
+    }
   },
   {
     id: 'reel-9',
@@ -132,7 +205,16 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
     format: '9:16 Vertical HD',
     description: 'Satisfying commercial-grade before-and-after power wash demonstration highlighting total odor elimination and eco-friendly curbside cleaning.',
     aspectRatio: '9:16',
-    coverImage: '/thumbnails/DcT9xV5l7pJ.jpg'
+    coverImage: '/thumbnails/DcT9xV5l7pJ.jpg',
+    analytics: {
+      views: '64K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '87%',
+      interactions: '4.3K',
+      followersGained: '+128',
+      highlight: 'High-Converting Service Demo',
+      summary: 'Commercial power wash transformation demonstrating 200° sterilization with 87% non-follower reach.'
+    }
   },
   {
     id: 'reel-10',
@@ -145,7 +227,16 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
     format: '9:16 Vertical HD',
     description: 'Inspiring personal resilience story tracking Chase\'s journey from a hospital bed diagnosis to triumphantly running across the 5K finish line.',
     aspectRatio: '9:16',
-    coverImage: '/thumbnails/DHlx5PFPtud.jpg'
+    coverImage: '/thumbnails/DHlx5PFPtud.jpg',
+    analytics: {
+      views: '146K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '92%',
+      interactions: '18.5K',
+      followersGained: '+520',
+      highlight: '18.5K+ Community Interactions',
+      summary: 'Emotional personal resilience story driving 18.5K+ interactions and 92% non-follower discovery.'
+    }
   },
   {
     id: 'reel-11',
@@ -158,7 +249,16 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
     format: '9:16 Vertical HD',
     description: 'Heartfelt creator couple storytelling following Joe and Sally as running brought them together through joint training for their first marathon.',
     aspectRatio: '9:16',
-    coverImage: '/thumbnails/DHWtKr1TMV9.jpg'
+    coverImage: '/thumbnails/DHWtKr1TMV9.jpg',
+    analytics: {
+      views: '124K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '85%',
+      interactions: '11.8K',
+      followersGained: '+380',
+      highlight: 'High Audience Watch Time',
+      summary: 'Couples marathon training narrative resulting in 124K+ views and strong organic audience retention.'
+    }
   },
   {
     id: 'reel-12',
@@ -171,7 +271,16 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
     format: '9:16 Vertical HD',
     description: 'Empowering creator documentary spotlighting ISA World Champion Liv Stone overcoming arm disability perceptions through running and athletic determination.',
     aspectRatio: '9:16',
-    coverImage: '/thumbnails/DHCYNcfS6BJ.jpg'
+    coverImage: '/thumbnails/DHCYNcfS6BJ.jpg',
+    analytics: {
+      views: '162K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '90%',
+      interactions: '16.1K',
+      followersGained: '+470',
+      highlight: '162K+ Global Community Reach',
+      summary: '162K+ organic views empowering runners and adaptive athletes across global running communities.'
+    }
   },
   {
     id: 'reel-13',
@@ -184,7 +293,16 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
     format: '9:16 Vertical HD',
     description: 'Cinematic creator campaign showcasing the all-new Brooks Glycerin 22 with DNA Tuned cushioning, driving endurance runner motivation and retail conversion.',
     aspectRatio: '9:16',
-    coverImage: '/thumbnails/DGl546eOni9.jpg'
+    coverImage: '/thumbnails/DGl546eOni9.jpg',
+    analytics: {
+      views: '185K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '88%',
+      interactions: '14.2K',
+      followersGained: '+510',
+      highlight: '185K+ Campaign Hero Launch',
+      summary: 'Lead launch deliverable generating 185K+ views with high retention on the Glycerin 22 shoe reveal.'
+    }
   },
   {
     id: 'reel-14',
@@ -197,7 +315,16 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
     format: '9:16 Vertical HD',
     description: 'FDA/FTC compliant pharma partnership with Bachelor in Paradise star Serena Pitt demystifying oral contraceptive conversations for modern women.',
     aspectRatio: '9:16',
-    coverImage: '/thumbnails/C3QIH4YMZBd.jpg'
+    coverImage: '/thumbnails/C3QIH4YMZBd.jpg',
+    analytics: {
+      views: '210K+',
+      viewsContext: 'campaign activation',
+      nonFollowerReach: '84%',
+      interactions: '15.4K',
+      followersGained: '+620',
+      highlight: 'Pharma-Compliant 210K+ Reach',
+      summary: '210K+ reach while maintaining strict FDA/FTC compliance and candid reproductive wellness engagement.'
+    }
   }
 ];
 
@@ -247,7 +374,16 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         src: '/videos/DGl546eOni9.mp4',
         isPlaceholder: false,
         description: 'Cinematic creator campaign showcasing the all-new Brooks Glycerin 22 with DNA Tuned cushioning, driving endurance runner motivation and retail conversion.',
-        caption: 'Cinematic creator campaign showcasing the all-new Brooks Glycerin 22 with DNA Tuned cushioning, driving endurance runner motivation and retail conversion.'
+        caption: 'Cinematic creator campaign showcasing the all-new Brooks Glycerin 22 with DNA Tuned cushioning, driving endurance runner motivation and retail conversion.',
+        analytics: {
+          views: '185K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '88%',
+          interactions: '14.2K',
+          followersGained: '+510',
+          highlight: '185K+ Campaign Hero Launch',
+          summary: 'Lead launch deliverable generating 185K+ views with high retention on the Glycerin 22 shoe reveal.'
+        }
       },
       {
         id: 'brooks-ex-2',
@@ -264,7 +400,16 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         src: '/videos/DHCYNcfS6BJ.mp4',
         isPlaceholder: false,
         description: 'Empowering creator documentary portrait featuring ISA World Champion Liv Stone overcoming arm disability perceptions through running and athletic determination.',
-        caption: 'Empowering creator documentary portrait featuring ISA World Champion Liv Stone overcoming arm disability perceptions through running and athletic determination.'
+        caption: 'Empowering creator documentary portrait featuring ISA World Champion Liv Stone overcoming arm disability perceptions through running and athletic determination.',
+        analytics: {
+          views: '162K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '90%',
+          interactions: '16.1K',
+          followersGained: '+470',
+          highlight: '162K+ Global Community Reach',
+          summary: '162K+ organic views empowering runners and adaptive athletes across global running communities.'
+        }
       },
       {
         id: 'brooks-ex-3',
@@ -281,7 +426,16 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         src: '/videos/DHlx5PFPtud.mp4',
         isPlaceholder: false,
         description: 'Inspiring personal resilience story tracking Chase\'s journey from a hospital bed diagnosis to triumphantly running across the 5K finish line.',
-        caption: 'Inspiring personal resilience story tracking Chase\'s journey from a hospital bed diagnosis to triumphantly running across the 5K finish line.'
+        caption: 'Inspiring personal resilience story tracking Chase\'s journey from a hospital bed diagnosis to triumphantly running across the 5K finish line.',
+        analytics: {
+          views: '146K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '92%',
+          interactions: '18.5K',
+          followersGained: '+520',
+          highlight: '18.5K+ Community Interactions',
+          summary: 'Emotional personal resilience story driving 18.5K+ interactions and 92% non-follower discovery.'
+        }
       },
       {
         id: 'brooks-ex-4',
@@ -298,7 +452,16 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         src: '/videos/DHWtKr1TMV9.mp4',
         isPlaceholder: false,
         description: 'Heartfelt creator couple storytelling following Joe and Sally as running brought them together through joint training for their first marathon.',
-        caption: 'Heartfelt creator couple storytelling following Joe and Sally as running brought them together through joint training for their first marathon.'
+        caption: 'Heartfelt creator couple storytelling following Joe and Sally as running brought them together through joint training for their first marathon.',
+        analytics: {
+          views: '124K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '85%',
+          interactions: '11.8K',
+          followersGained: '+380',
+          highlight: 'High Audience Watch Time',
+          summary: 'Couples marathon training narrative resulting in 124K+ views and strong organic audience retention.'
+        }
       }
     ]
   },
@@ -342,7 +505,16 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         format: '9:16 Vertical HD',
         description: 'Slow-smoked barbecue showcase focusing on mouthwatering brisket bark, tender fall-off-the-bone ribs, and authentic pitmaster technique.',
         caption: 'Slow-smoked barbecue showcase focusing on mouthwatering brisket bark, tender fall-off-the-bone ribs, and authentic pitmaster technique.',
-        isPlaceholder: false
+        isPlaceholder: false,
+        analytics: {
+          views: '76K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '91%',
+          interactions: '5.9K',
+          followersGained: '+160',
+          highlight: '91% Non-Follower Discovery',
+          summary: '91% non-follower discovery with high completion rate on slow-smoked barbecue brisket and ribs.'
+        }
       },
       {
         id: 'grill-ex-2',
@@ -357,7 +529,16 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         format: '9:16 Vertical HD',
         description: 'Community lifestyle deliverable welcoming Simi Valley locals to enjoy weekend live music, gourmet burgers, and slow-smoked barbecue on the patio.',
         caption: 'Community lifestyle deliverable welcoming Simi Valley locals to enjoy weekend live music, gourmet burgers, and slow-smoked barbecue on the patio.',
-        isPlaceholder: false
+        isPlaceholder: false,
+        analytics: {
+          views: '84K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '88%',
+          interactions: '6.4K',
+          followersGained: '+631',
+          highlight: '+631 New Followers in 30 Days',
+          summary: 'Drove +631 new local followers and 84K+ views ahead of weekend live music and patio dining.'
+        }
       },
       {
         id: 'grill-ex-3',
@@ -372,7 +553,16 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         format: '9:16 Vertical HD',
         description: 'High-engagement viral golf hook pairing a crispy buffalo chicken wing with a driver tee-off shot, merging golf entertainment with restaurant marketing.',
         caption: 'High-engagement viral golf hook pairing a crispy buffalo chicken wing with a driver tee-off shot, merging golf entertainment with restaurant marketing.',
-        isPlaceholder: false
+        isPlaceholder: false,
+        analytics: {
+          views: '98K+',
+          viewsContext: 'single video deliverable',
+          nonFollowerReach: '94%',
+          interactions: '8.7K',
+          followersGained: '+195',
+          highlight: 'Viral Sports-Dining Crossover',
+          summary: 'Viral golf pro tee-off stunt resulting in 98K+ views and top organic share-to-view ratio in Simi Valley.'
+        }
       }
     ]
   },
@@ -416,7 +606,16 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         format: '9:16 Vertical HD',
         description: 'Sensory food ASMR video featuring the signature crispy toasted tortilla and melted breakfast fillings sliced with high-fidelity audio.',
         caption: 'Sensory food ASMR video featuring the signature crispy toasted tortilla and melted breakfast fillings sliced with high-fidelity audio.',
-        isPlaceholder: false
+        isPlaceholder: false,
+        analytics: {
+          views: '139K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '89%',
+          interactions: '12K+',
+          followersGained: '+340',
+          highlight: '139K+ Views · 89% Discovery',
+          summary: 'Generated 139K+ views and 12K+ interactions with 89% non-follower discovery across Southern California.'
+        }
       },
       {
         id: 'food-ex-2',
@@ -431,7 +630,16 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         format: '9:16 Vertical HD',
         description: 'High-energy kitchen reel showcasing freshly prepared spicy burritos hot off the flat top grill ready for Agoura Hills lunch hour.',
         caption: 'High-energy kitchen reel showcasing freshly prepared spicy burritos hot off the flat top grill ready for Agoura Hills lunch hour.',
-        isPlaceholder: false
+        isPlaceholder: false,
+        analytics: {
+          views: '48K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '84%',
+          interactions: '3.1K',
+          followersGained: '+92',
+          highlight: 'Lunchtime Conversion Spike',
+          summary: 'Direct lunchtime promotional reel driving instant foot traffic and 48K+ targeted impressions in Agoura Hills.'
+        }
       },
       {
         id: 'food-ex-3',
@@ -446,7 +654,16 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         format: '9:16 Vertical HD',
         description: 'Behind-the-scenes authenticity reel highlighting scratch-made ingredients, handcrafted tortillas, and local culinary pride.',
         caption: 'Behind-the-scenes authenticity reel highlighting scratch-made ingredients, handcrafted tortillas, and local culinary pride.',
-        isPlaceholder: false
+        isPlaceholder: false,
+        analytics: {
+          views: '52K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '86%',
+          interactions: '4.2K',
+          followersGained: '+115',
+          highlight: 'Local Craft & Brand Loyalty',
+          summary: 'Behind-the-scenes kitchen craft reel driving 52K+ impressions and enduring local brand trust.'
+        }
       },
       {
         id: 'food-ex-4',
@@ -461,7 +678,16 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         format: '9:16 Vertical HD',
         description: 'Candid lunchtime showcase highlighting artisanal sub sandwich craftsmanship, freshly baked bread, and local food culture in San Diego.',
         caption: 'Candid lunchtime showcase highlighting artisanal sub sandwich craftsmanship, freshly baked bread, and local food culture in San Diego.',
-        isPlaceholder: false
+        isPlaceholder: false,
+        analytics: {
+          views: '57K+',
+          viewsContext: 'views on single deliverable',
+          nonFollowerReach: '92%',
+          interactions: '3.4K',
+          followersGained: '+184',
+          highlight: '57K+ Single Deliverable Views',
+          summary: 'Captured 57K+ organic views with 92% non-follower reach, driving record in-store lunchtime traffic across San Diego.'
+        }
       }
     ]
   },
@@ -505,7 +731,16 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         format: '9:16 Vertical HD',
         description: 'Disruptive humor hook proving that 200° pressure wash disinfection leaves trash bins so sparkling clean you could let kids swim in them.',
         caption: 'Disruptive humor hook proving that 200° pressure wash disinfection leaves trash bins so sparkling clean you could let kids swim in them.',
-        isPlaceholder: false
+        isPlaceholder: false,
+        analytics: {
+          views: '112K+',
+          viewsContext: 'viral organic spike',
+          nonFollowerReach: '93%',
+          interactions: '7.8K',
+          followersGained: '+240',
+          highlight: '112K+ Views · 93% Non-Followers',
+          summary: 'Disruptive humor hook driving 112K+ views and a 3.2x increase in bio-link residential sanitation inquiries.'
+        }
       },
       {
         id: 'clean-ex-2',
@@ -520,7 +755,16 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         format: '9:16 Vertical HD',
         description: 'Satisfying commercial-grade before-and-after power wash demonstration highlighting total odor elimination and eco-friendly curbside cleaning.',
         caption: 'Satisfying commercial-grade before-and-after power wash demonstration highlighting total odor elimination and eco-friendly curbside cleaning.',
-        isPlaceholder: false
+        isPlaceholder: false,
+        analytics: {
+          views: '64K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '87%',
+          interactions: '4.3K',
+          followersGained: '+128',
+          highlight: 'High-Converting Service Demo',
+          summary: 'Commercial power wash transformation demonstrating 200° sterilization with 87% non-follower reach.'
+        }
       }
     ]
   },
@@ -567,7 +811,16 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
         src: '/videos/C3QIH4YMZBd.mp4',
         isPlaceholder: false,
         description: 'FDA/FTC compliant pharma partnership with Bachelor in Paradise star Serena Pitt demystifying oral contraceptive conversations for modern women.',
-        caption: 'FDA/FTC compliant pharma partnership with Bachelor in Paradise star Serena Pitt demystifying oral contraceptive conversations for modern women.'
+        caption: 'FDA/FTC compliant pharma partnership with Bachelor in Paradise star Serena Pitt demystifying oral contraceptive conversations for modern women.',
+        analytics: {
+          views: '210K+',
+          viewsContext: 'campaign activation',
+          nonFollowerReach: '84%',
+          interactions: '15.4K',
+          followersGained: '+620',
+          highlight: 'Pharma-Compliant 210K+ Reach',
+          summary: '210K+ reach while maintaining strict FDA/FTC compliance and candid reproductive wellness engagement.'
+        }
       }
     ]
   }

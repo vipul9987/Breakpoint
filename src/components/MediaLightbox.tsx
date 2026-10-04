@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { X, Sparkles, Film, CheckCircle } from 'lucide-react';
+import { X, Sparkles, Film, CheckCircle, TrendingUp, BarChart3 } from 'lucide-react';
 import { CampaignMediaItem } from '../types/campaign';
 
 interface MediaLightboxProps {
@@ -123,8 +123,8 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose }) 
         </div>
 
         {/* Sidebar Information — Professional Agency Portfolio Details */}
-        <div className="w-full lg:w-96 p-6 sm:p-8 flex flex-col justify-between bg-[#141615] border-t lg:border-t-0 lg:border-l border-white/10 overflow-y-auto">
-          <div className="space-y-6">
+        <div className="w-full lg:w-[410px] p-6 sm:p-7 flex flex-col justify-between bg-[#141615] border-t lg:border-t-0 lg:border-l border-white/10 overflow-y-auto max-h-[92vh]">
+          <div className="space-y-5">
             
             {/* Aspect Ratio & Deliverable Category Badges */}
             <div>
@@ -148,6 +148,77 @@ export const MediaLightbox: React.FC<MediaLightboxProps> = ({ media, onClose }) 
                 </div>
               )}
             </div>
+
+            {/* Campaign Performance & Growth Analysis */}
+            {media.analytics && (
+              <div className="pt-4 border-t border-white/10 space-y-3">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-xs uppercase tracking-wider font-bold text-[#f1d5a0] font-mono flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-[#f1d5a0]" />
+                    <span>Performance &amp; Reach Analysis</span>
+                  </h4>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">
+                    Verified
+                  </span>
+                </div>
+
+                {/* 2x2 Performance Metrics Grid */}
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                    <div className="text-[10px] text-white/50 font-mono uppercase tracking-wider truncate">
+                      {media.analytics.viewsContext || 'Views in 30 Days'}
+                    </div>
+                    <div className="text-lg font-black text-white font-mono mt-0.5">
+                      {media.analytics.views}
+                    </div>
+                  </div>
+
+                  <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                    <div className="text-[10px] text-white/50 font-mono uppercase tracking-wider truncate">
+                      Non-Follower Reach
+                    </div>
+                    <div className="text-lg font-black text-[#f1d5a0] font-mono mt-0.5">
+                      {media.analytics.nonFollowerReach || '85%+'}
+                    </div>
+                  </div>
+
+                  {media.analytics.interactions && (
+                    <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                      <div className="text-[10px] text-white/50 font-mono uppercase tracking-wider truncate">
+                        Interactions
+                      </div>
+                      <div className="text-sm font-bold text-white font-mono mt-0.5">
+                        {media.analytics.interactions}
+                      </div>
+                    </div>
+                  )}
+
+                  {media.analytics.followersGained && (
+                    <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                      <div className="text-[10px] text-white/50 font-mono uppercase tracking-wider truncate">
+                        Follower Lift
+                      </div>
+                      <div className="text-sm font-bold text-emerald-400 font-mono mt-0.5">
+                        {media.analytics.followersGained}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Strategic Highlight Banner */}
+                <div className="p-3 rounded-xl bg-[#84572f]/20 border border-[#f1d5a0]/30 text-xs">
+                  <div className="font-semibold text-[#f1d5a0] flex items-center gap-1.5 mb-1 text-[11px]">
+                    <Sparkles className="w-3.5 h-3.5 text-[#f1d5a0] shrink-0" />
+                    <span>{media.analytics.highlight}</span>
+                  </div>
+                  {media.analytics.summary && (
+                    <p className="text-[11px] text-white/75 leading-relaxed">
+                      {media.analytics.summary}
+                    </p>
+                  )}
+                </div>
+              </div>
+            )}
 
             {/* Creative Description */}
             <div className="pt-4 border-t border-white/10">
