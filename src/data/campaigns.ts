@@ -747,13 +747,13 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
   {
     id: 'reel-34',
     reelCode: 'prevaia_chef_counter_prep',
-    title: 'Prevaia Artisan Deli · Chef Craft: Fresh Pesto & Mortadella Build',
+    title: 'Prevaia Artisan Deli × @bylauraarante · Master Counter Sandwich Build',
     category: 'Creative Production',
     videoUrl: '/videos/prevaia_chef_counter_prep.mp4',
     posterUrl: '/thumbnails/prevaia_chef_counter_prep.jpg',
-    talent: 'Prevaia Master Deli Chef',
+    talent: '@bylauraarante × Prevaia',
     format: '9:16 Vertical HD',
-    description: 'Behind-the-glass culinary craftsmanship showing master deli chefs layering fresh basil pesto, stracciatella, and shaved mortadella.',
+    description: 'Behind-the-glass culinary craftsmanship with creator @bylauraarante highlighting master deli chefs layering fresh basil pesto, stracciatella, and shaved mortadella.',
     aspectRatio: '9:16',
     coverImage: '/thumbnails/prevaia_chef_counter_prep.jpg',
     analytics: {
