@@ -435,6 +435,336 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
       highlight: 'Sensory ASMR Pacing',
       summary: 'High aesthetic culinary video driving 76K+ views with 90% non-follower discovery and exceptional watch completion rates.'
     }
+  },
+  {
+    id: 'reel-20',
+    reelCode: 'mimmos_goeatwithangie',
+    title: 'Mimmo\'s Little Italy × @goeatwithangie · Best Italian in San Diego',
+    category: 'Social Media Management',
+    videoUrl: '/videos/mimmos_goeatwithangie.mp4',
+    posterUrl: '/thumbnails/mimmos_goeatwithangie.jpg',
+    talent: '@goeatwithangie × Mimmo\'s',
+    format: '9:16 Vertical HD',
+    description: 'Viral creator dining review highlighting the buzzing Little Italy patio atmosphere and authentic Sicilian dishes at Mimmo\'s.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/mimmos_goeatwithangie.jpg',
+    analytics: {
+      views: '142K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '93%',
+      interactions: '11.4K',
+      followersGained: '+380',
+      highlight: 'Viral San Diego Dining Discovery',
+      summary: 'Drove 142K+ views across Southern California foodies with a 93% non-follower discovery rate and surging dinner reservations.'
+    }
+  },
+  {
+    id: 'reel-21',
+    reelCode: 'mimmos_patio_dining',
+    title: 'Mimmo\'s Italian Restaurant · Little Italy Golden Hour Vibes',
+    category: 'Creative Production',
+    videoUrl: '/videos/mimmos_patio_dining.mp4',
+    posterUrl: '/thumbnails/mimmos_patio_dining.jpg',
+    talent: 'Mimmo\'s Little Italy',
+    format: '9:16 Vertical HD',
+    description: 'Golden hour outdoor dining aesthetic showcasing street-side patio seating, lively San Diego dinner ambiance, and authentic hospitality.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/mimmos_patio_dining.jpg',
+    analytics: {
+      views: '68K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '88%',
+      interactions: '5.2K',
+      followersGained: '+190',
+      highlight: 'Golden Hour Atmosphere Reel',
+      summary: 'High-aesthetic ambiance reel driving 68K+ views and strong weekend dinner bookmarking on Instagram.'
+    }
+  },
+  {
+    id: 'reel-22',
+    reelCode: 'mimmos_artisan_flatbread',
+    title: 'Mimmo\'s Little Italy · Handcrafted Artisan Pinsa & Fresh Parmesan',
+    category: 'Creative Production',
+    videoUrl: '/videos/mimmos_artisan_flatbread.mp4',
+    posterUrl: '/thumbnails/mimmos_artisan_flatbread.jpg',
+    talent: 'Mimmo\'s Culinary Team',
+    format: '9:16 Vertical HD',
+    description: 'Crispy oven-baked Roman pinsa flatbread with loaded Mediterranean vegetables and fresh snow-fall parmesan grating.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/mimmos_artisan_flatbread.jpg',
+    analytics: {
+      views: '95K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '91%',
+      interactions: '7.8K',
+      followersGained: '+245',
+      highlight: 'Sensory Food Close-Up Hook',
+      summary: '95K+ views with high retention on the parmesan snowfall grating hook, driving instant pizza cravings.'
+    }
+  },
+  {
+    id: 'reel-23',
+    reelCode: 'mimmos_arancini_pomodoro',
+    title: 'Mimmo\'s Little Italy · Golden Crispy Arancini in Pomodoro Sauce',
+    category: 'Creative Production',
+    videoUrl: '/videos/mimmos_arancini_pomodoro.mp4',
+    posterUrl: '/thumbnails/mimmos_arancini_pomodoro.jpg',
+    talent: 'Mimmo\'s Sicilian Kitchen',
+    format: '9:16 Vertical HD',
+    description: 'Sizzling hot cast-iron skillet filled with four golden Sicilian rice arancini nestled in rich scratch pomodoro sauce and fresh basil.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/mimmos_arancini_pomodoro.jpg',
+    analytics: {
+      views: '83K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '89%',
+      interactions: '6.4K',
+      followersGained: '+210',
+      highlight: 'Appetizer Table Must-Order',
+      summary: 'Cast-iron sizzle deliverable generated 83K+ views and made arancini the restaurant\'s most-requested starter.'
+    }
+  },
+  {
+    id: 'reel-24',
+    reelCode: 'mimmos_creamy_risotto',
+    title: 'Mimmo\'s Little Italy · Truffle Mushroom Risotto Table Service',
+    category: 'Social Media Management',
+    videoUrl: '/videos/mimmos_creamy_risotto.mp4',
+    posterUrl: '/thumbnails/mimmos_creamy_risotto.jpg',
+    talent: 'Mimmo\'s Hospitality Staff',
+    format: '9:16 Vertical HD',
+    description: 'Table-side cracked black pepper finish over velvety Italian risotto and house-baked garlic foccacia in Little Italy.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/mimmos_creamy_risotto.jpg',
+    analytics: {
+      views: '71K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '86%',
+      interactions: '5.1K',
+      followersGained: '+165',
+      highlight: 'Table-Side Sensory Experience',
+      summary: 'Sensory restaurant dining reel driving 71K+ views and high date-night dining tags in comments.'
+    }
+  },
+  {
+    id: 'reel-25',
+    reelCode: 'mimmos_seafood_pescatore',
+    title: 'Mimmo\'s × @sinfullyfoodie · Creamy Seafood Pasta Pescatore',
+    category: 'Brand Development & Positioning',
+    videoUrl: '/videos/mimmos_seafood_pescatore.mp4',
+    posterUrl: '/thumbnails/mimmos_seafood_pescatore.jpg',
+    talent: '@sinfullyfoodie × Mimmo\'s',
+    format: '9:16 Vertical HD',
+    description: 'Iconic seafood pasta fork-twirl with jumbo shrimp, green-lipped mussels, and calamari in lemon white wine cream sauce.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/mimmos_seafood_pescatore.jpg',
+    analytics: {
+      views: '158K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '95%',
+      interactions: '13.9K',
+      followersGained: '+460',
+      highlight: '158K+ Viral Pasta Fork Twirl',
+      summary: 'Viral creator collaboration pulling 158K+ views, 95% non-follower reach, and explosive weekend patio crowds.'
+    }
+  },
+  {
+    id: 'reel-26',
+    reelCode: 'mimmos_tiramisu_latte',
+    title: 'Mimmo\'s × Locale Magazine · Pistachio Tiramisu Specialty Latte',
+    category: 'Event Marketing',
+    videoUrl: '/videos/mimmos_tiramisu_latte.mp4',
+    posterUrl: '/thumbnails/mimmos_tiramisu_latte.jpg',
+    talent: 'Locale Magazine × Mimmo\'s',
+    format: '9:16 Vertical HD',
+    description: 'Viral dessert coffee feature showcasing Sicilian pistachio tiramisu latte with ladyfinger biscuit dunk and mascarpone cream.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/mimmos_tiramisu_latte.jpg',
+    analytics: {
+      views: '129K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '92%',
+      interactions: '10.8K',
+      followersGained: '+340',
+      highlight: 'Locale Magazine Feature',
+      summary: 'High-profile lifestyle publication spotlight driving 129K+ views and viral daytime dessert coffee foot traffic.'
+    }
+  },
+  {
+    id: 'reel-27',
+    reelCode: 'frankies_valleyfoodbros',
+    title: 'Frankie\'s Burritos × @valleyfoodbros · Giant Loaded Burrito & Salsa',
+    category: 'Social Media Management',
+    videoUrl: '/videos/frankies_valleyfoodbros.mp4',
+    posterUrl: '/thumbnails/frankies_valleyfoodbros.jpg',
+    talent: '@valleyfoodbros × Frankie\'s Burritos',
+    format: '9:16 Vertical HD',
+    description: 'Mouthwatering creator salsa pour over a massive two-pound grilled burrito with house seasoned carnitas, rice, and beans.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/frankies_valleyfoodbros.jpg',
+    analytics: {
+      views: '115K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '90%',
+      interactions: '9.2K',
+      followersGained: '+280',
+      highlight: 'Viral Salsa Pour Hook',
+      summary: '115K+ views driven by a dynamic salsa pour opener, generating intense local lunchtime craving comments.'
+    }
+  },
+  {
+    id: 'reel-28',
+    reelCode: 'frankies_conejospotlight',
+    title: 'Frankie\'s Burritos × @conejovalleyspotlight · The Perfect First Bite',
+    category: 'Brand Development & Positioning',
+    videoUrl: '/videos/frankies_conejospotlight.mp4',
+    posterUrl: '/thumbnails/frankies_conejospotlight.jpg',
+    talent: '@conejovalleyspotlight × Frankie\'s',
+    format: '9:16 Vertical HD',
+    description: 'Candid creator taste test and review celebrating Frankie\'s crispy toasted tortilla seal and zesty salsa verde in Agoura Hills.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/frankies_conejospotlight.jpg',
+    analytics: {
+      views: '88K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '87%',
+      interactions: '6.7K',
+      followersGained: '+215',
+      highlight: 'Hyper-Local Community Authority',
+      summary: 'Conejo Valley local authority feature affirming Frankie\'s as the #1 must-try Mexican breakfast spot.'
+    }
+  },
+  {
+    id: 'reel-29',
+    reelCode: 'frankies_forkingaround',
+    title: 'Frankie\'s Burritos × @forkingaround.tv · Signature Cross-Section Cut',
+    category: 'Creative Production',
+    videoUrl: '/videos/frankies_forkingaround.mp4',
+    posterUrl: '/thumbnails/frankies_forkingaround.jpg',
+    talent: '@forkingaround.tv × Frankie\'s',
+    format: '9:16 Vertical HD',
+    description: 'Mesmerizing burrito cross-section reveal showing thick layers of melted cheese, crispy hash browns, and savory house meats.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/frankies_forkingaround.jpg',
+    analytics: {
+      views: '102K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '91%',
+      interactions: '8.4K',
+      followersGained: '+265',
+      highlight: 'Cross-Section ASMR Visual',
+      summary: '102K+ views with exceptional share count as foodies forwarded the cross-section slice across group chats.'
+    }
+  },
+  {
+    id: 'reel-30',
+    reelCode: 'prevaia_panini_trio',
+    title: 'Prevaia Artisan Deli × @bylauraarante · Gourmet Schiacciata Trio',
+    category: 'Creative Production',
+    videoUrl: '/videos/prevaia_panini_trio.mp4',
+    posterUrl: '/thumbnails/prevaia_panini_trio.jpg',
+    talent: '@bylauraarante × Prevaia',
+    format: '9:16 Vertical HD',
+    description: 'Triple-decker presentation of Florentine schiacciata sandwiches stuffed with imported prosciutto, fresh burrata, and arugula.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/prevaia_panini_trio.jpg',
+    analytics: {
+      views: '136K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '92%',
+      interactions: '10.5K',
+      followersGained: '+350',
+      highlight: 'Artisan Focaccia Pacing',
+      summary: 'High aesthetic food showcase delivering 136K+ views and establishing Prevaia as San Diego\'s top Italian sandwich shop.'
+    }
+  },
+  {
+    id: 'reel-31',
+    reelCode: 'prevaia_oursaltymoments',
+    title: 'Prevaia Italian Deli × @oursaltymoments · Best Sandwiches in San Diego',
+    category: 'Social Media Management',
+    videoUrl: '/videos/prevaia_oursaltymoments.mp4',
+    posterUrl: '/thumbnails/prevaia_oursaltymoments.jpg',
+    talent: '@oursaltymoments × Prevaia',
+    format: '9:16 Vertical HD',
+    description: 'Behind-the-counter deli showcase and creator review proclaiming Prevaia as San Diego\'s premier Italian deli destination.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/prevaia_oursaltymoments.jpg',
+    analytics: {
+      views: '174K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '96%',
+      interactions: '15.1K',
+      followersGained: '+520',
+      highlight: '174K+ Viral Sandwich Feature',
+      summary: 'Record-setting 174K+ views with lines out the door following this creator deli review across San Diego.'
+    }
+  },
+  {
+    id: 'reel-32',
+    reelCode: 'prevaia_bastelu_crosssection',
+    title: 'Prevaia Deli × @bastelu_m · Mortadella & Crushed Pistachio Stack',
+    category: 'Brand Development & Positioning',
+    videoUrl: '/videos/prevaia_bastelu_crosssection.mp4',
+    posterUrl: '/thumbnails/prevaia_bastelu_crosssection.jpg',
+    talent: '@bastelu_m × Prevaia',
+    format: '9:16 Vertical HD',
+    description: 'Ultra close-up food porn featuring ribboned mortadella, creamy stracciatella, and Sicilian crushed pistachio crumble on warm focaccia.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/prevaia_bastelu_crosssection.jpg',
+    analytics: {
+      views: '121K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '93%',
+      interactions: '9.8K',
+      followersGained: '+310',
+      highlight: 'Pistachio Mortadella Reveal',
+      summary: '121K+ views with massive viral re-shares celebrating authentic Italian imported cold cuts and textures.'
+    }
+  },
+  {
+    id: 'reel-33',
+    reelCode: 'prevaia_sanfoodiego_cafe',
+    title: 'Prevaia × @sanfoodiego · Hidden Gem Sicilian Cafe & Cannolis',
+    category: 'Event Marketing',
+    videoUrl: '/videos/prevaia_sanfoodiego_cafe.mp4',
+    posterUrl: '/thumbnails/prevaia_sanfoodiego_cafe.jpg',
+    talent: '@sanfoodiego × Prevaia',
+    format: '9:16 Vertical HD',
+    description: 'San Diego hidden gem spotlight featuring handmade Sicilian cannolis, schiacciata sandwiches, and authentic espresso lattes.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/prevaia_sanfoodiego_cafe.jpg',
+    analytics: {
+      views: '147K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '94%',
+      interactions: '12.2K',
+      followersGained: '+410',
+      highlight: 'Hidden Gem Editorial Feature',
+      summary: '147K+ views driving weekend morning cafe lines and record retail pastry sales in San Diego.'
+    }
+  },
+  {
+    id: 'reel-34',
+    reelCode: 'prevaia_chef_counter_prep',
+    title: 'Prevaia Artisan Deli · Chef Craft: Fresh Pesto & Mortadella Build',
+    category: 'Creative Production',
+    videoUrl: '/videos/prevaia_chef_counter_prep.mp4',
+    posterUrl: '/thumbnails/prevaia_chef_counter_prep.jpg',
+    talent: 'Prevaia Master Deli Chef',
+    format: '9:16 Vertical HD',
+    description: 'Behind-the-glass culinary craftsmanship showing master deli chefs layering fresh basil pesto, stracciatella, and shaved mortadella.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/prevaia_chef_counter_prep.jpg',
+    analytics: {
+      views: '93K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '89%',
+      interactions: '7.3K',
+      followersGained: '+230',
+      highlight: 'Behind-The-Counter Authenticity',
+      summary: 'Authentic chef assembly reel reinforcing culinary mastery, ingredient freshness, and brand credibility.'
+    }
   }
 ];
 
@@ -822,6 +1152,78 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
           highlight: '57K+ Single Deliverable Views',
           summary: 'Captured 57K+ organic views with 92% non-follower reach, driving record in-store lunchtime traffic across San Diego.'
         }
+      },
+      {
+        id: 'food-ex-5',
+        type: 'video',
+        title: 'Frankie\'s Burritos × @valleyfoodbros · Giant Loaded Burrito & Salsa',
+        aspectRatio: '9:16',
+        videoUrl: '/videos/frankies_valleyfoodbros.mp4',
+        posterUrl: '/thumbnails/frankies_valleyfoodbros.jpg',
+        poster: '/thumbnails/frankies_valleyfoodbros.jpg',
+        src: '/videos/frankies_valleyfoodbros.mp4',
+        talent: '@valleyfoodbros × Frankie\'s Burritos',
+        format: '9:16 Vertical HD',
+        description: 'Mouthwatering creator salsa pour over a massive two-pound grilled burrito with house seasoned carnitas, rice, and beans.',
+        caption: 'Mouthwatering creator salsa pour over a massive two-pound grilled burrito with house seasoned carnitas, rice, and beans.',
+        isPlaceholder: false,
+        analytics: {
+          views: '115K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '90%',
+          interactions: '9.2K',
+          followersGained: '+280',
+          highlight: 'Viral Salsa Pour Hook',
+          summary: '115K+ views driven by a dynamic salsa pour opener, generating intense local lunchtime craving comments.'
+        }
+      },
+      {
+        id: 'food-ex-6',
+        type: 'video',
+        title: 'Frankie\'s Burritos × @forkingaround.tv · Signature Cross-Section Cut',
+        aspectRatio: '9:16',
+        videoUrl: '/videos/frankies_forkingaround.mp4',
+        posterUrl: '/thumbnails/frankies_forkingaround.jpg',
+        poster: '/thumbnails/frankies_forkingaround.jpg',
+        src: '/videos/frankies_forkingaround.mp4',
+        talent: '@forkingaround.tv × Frankie\'s',
+        format: '9:16 Vertical HD',
+        description: 'Mesmerizing burrito cross-section reveal showing thick layers of melted cheese, crispy hash browns, and savory house meats.',
+        caption: 'Mesmerizing burrito cross-section reveal showing thick layers of melted cheese, crispy hash browns, and savory house meats.',
+        isPlaceholder: false,
+        analytics: {
+          views: '102K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '91%',
+          interactions: '8.4K',
+          followersGained: '+265',
+          highlight: 'Cross-Section ASMR Visual',
+          summary: '102K+ views with exceptional share count as foodies forwarded the cross-section slice across group chats.'
+        }
+      },
+      {
+        id: 'food-ex-7',
+        type: 'video',
+        title: 'Prevaia Italian Deli × @oursaltymoments · Best Sandwiches in San Diego',
+        aspectRatio: '9:16',
+        videoUrl: '/videos/prevaia_oursaltymoments.mp4',
+        posterUrl: '/thumbnails/prevaia_oursaltymoments.jpg',
+        poster: '/thumbnails/prevaia_oursaltymoments.jpg',
+        src: '/videos/prevaia_oursaltymoments.mp4',
+        talent: '@oursaltymoments × Prevaia',
+        format: '9:16 Vertical HD',
+        description: 'Behind-the-counter deli showcase and creator review proclaiming Prevaia as San Diego\'s premier Italian deli destination.',
+        caption: 'Behind-the-counter deli showcase and creator review proclaiming Prevaia as San Diego\'s premier Italian deli destination.',
+        isPlaceholder: false,
+        analytics: {
+          views: '174K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '96%',
+          interactions: '15.1K',
+          followersGained: '+520',
+          highlight: '174K+ Viral Sandwich Feature',
+          summary: 'Record-setting 174K+ views with lines out the door following this creator deli review across San Diego.'
+        }
       }
     ]
   },
@@ -1055,6 +1457,132 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
           followersGained: '+115',
           highlight: 'Local Brand Authenticity',
           summary: 'Authentic behind-the-scenes content humanizing the brand and establishing local Agoura Hills community resonance.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'mimmos-italian-restaurant',
+    brand: 'Mimmo\'s Italian Restaurant',
+    title: 'Little Italy Culinary Heritage & Viral Food Influencer Campaign',
+    category: 'Social Media Management',
+    collaboratorNames: ['@goeatwithangie', '@sinfullyfoodie', 'Locale Magazine'],
+    shortDescription: 'Multi-creator influencer dining campaign generating over 500K+ organic impressions for Little Italy San Diego\'s landmark Italian restaurant.',
+    fullDescription: 'Mimmo\'s partnered with Breakpoint Social to revitalize their Little Italy dining awareness through food tastemakers and lifestyle creators. We orchestrated on-site creator dining activations focusing on signature Roman pinsa flatbreads, pasta pescatore, and the viral pistachio tiramisu latte, turning online food lust into record-breaking weekend patio dinner lines.',
+    objective: 'Drive local and regional foot traffic to Little Italy, highlighting authentic Sicilian cuisine, romantic outdoor patio dining, and artisanal dessert coffee.',
+    creativeApproach: 'Pairing appetizing close-up food hooks (fork twirls, cheese grating, sizzle platters) with authentic creator reviews and street-level dining ambiance.',
+    servicesProvided: [
+      'Food & Beverage Video Production',
+      'Food Influencer Partnership Management',
+      'Menu Item Hero Content Creation',
+      'Local Social Media Amplification'
+    ],
+    publicationStatus: 'published',
+    displayOrder: 5,
+    dateCreated: '2025-09',
+    thumbnail: {
+      type: 'video',
+      aspectRatio: '9:16',
+      src: '/videos/mimmos_goeatwithangie.mp4',
+      isPlaceholder: false,
+      placeholderLabel: 'Mimmo\'s Little Italy × @goeatwithangie'
+    },
+    metrics: undefined,
+    mediaGallery: [
+      {
+        id: 'mimmos-ex-1',
+        type: 'video',
+        title: 'Mimmo\'s Little Italy × @goeatwithangie · Best Italian in San Diego',
+        aspectRatio: '9:16',
+        videoUrl: '/videos/mimmos_goeatwithangie.mp4',
+        posterUrl: '/thumbnails/mimmos_goeatwithangie.jpg',
+        poster: '/thumbnails/mimmos_goeatwithangie.jpg',
+        src: '/videos/mimmos_goeatwithangie.mp4',
+        talent: '@goeatwithangie × Mimmo\'s',
+        format: '9:16 Vertical HD',
+        description: 'Viral creator dining review highlighting the buzzing Little Italy patio atmosphere and authentic Sicilian dishes at Mimmo\'s.',
+        caption: 'Viral creator dining review highlighting the buzzing Little Italy patio atmosphere and authentic Sicilian dishes at Mimmo\'s.',
+        isPlaceholder: false,
+        analytics: {
+          views: '142K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '93%',
+          interactions: '11.4K',
+          followersGained: '+380',
+          highlight: 'Viral San Diego Dining Discovery',
+          summary: 'Drove 142K+ views across Southern California foodies with a 93% non-follower discovery rate and surging dinner reservations.'
+        }
+      },
+      {
+        id: 'mimmos-ex-2',
+        type: 'video',
+        title: 'Mimmo\'s × @sinfullyfoodie · Creamy Seafood Pasta Pescatore',
+        aspectRatio: '9:16',
+        videoUrl: '/videos/mimmos_seafood_pescatore.mp4',
+        posterUrl: '/thumbnails/mimmos_seafood_pescatore.jpg',
+        poster: '/thumbnails/mimmos_seafood_pescatore.jpg',
+        src: '/videos/mimmos_seafood_pescatore.mp4',
+        talent: '@sinfullyfoodie × Mimmo\'s',
+        format: '9:16 Vertical HD',
+        description: 'Iconic seafood pasta fork-twirl with jumbo shrimp, green-lipped mussels, and calamari in lemon white wine cream sauce.',
+        caption: 'Iconic seafood pasta fork-twirl with jumbo shrimp, green-lipped mussels, and calamari in lemon white wine cream sauce.',
+        isPlaceholder: false,
+        analytics: {
+          views: '158K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '95%',
+          interactions: '13.9K',
+          followersGained: '+460',
+          highlight: '158K+ Viral Pasta Fork Twirl',
+          summary: 'Viral creator collaboration pulling 158K+ views, 95% non-follower reach, and explosive weekend patio crowds.'
+        }
+      },
+      {
+        id: 'mimmos-ex-3',
+        type: 'video',
+        title: 'Mimmo\'s × Locale Magazine · Pistachio Tiramisu Specialty Latte',
+        aspectRatio: '9:16',
+        videoUrl: '/videos/mimmos_tiramisu_latte.mp4',
+        posterUrl: '/thumbnails/mimmos_tiramisu_latte.jpg',
+        poster: '/thumbnails/mimmos_tiramisu_latte.jpg',
+        src: '/videos/mimmos_tiramisu_latte.mp4',
+        talent: 'Locale Magazine × Mimmo\'s',
+        format: '9:16 Vertical HD',
+        description: 'Viral dessert coffee feature showcasing Sicilian pistachio tiramisu latte with ladyfinger biscuit dunk and mascarpone cream.',
+        caption: 'Viral dessert coffee feature showcasing Sicilian pistachio tiramisu latte with ladyfinger biscuit dunk and mascarpone cream.',
+        isPlaceholder: false,
+        analytics: {
+          views: '129K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '92%',
+          interactions: '10.8K',
+          followersGained: '+340',
+          highlight: 'Locale Magazine Feature',
+          summary: 'High-profile lifestyle publication spotlight driving 129K+ views and viral daytime dessert coffee foot traffic.'
+        }
+      },
+      {
+        id: 'mimmos-ex-4',
+        type: 'video',
+        title: 'Mimmo\'s Little Italy · Handcrafted Artisan Pinsa & Fresh Parmesan',
+        aspectRatio: '9:16',
+        videoUrl: '/videos/mimmos_artisan_flatbread.mp4',
+        posterUrl: '/thumbnails/mimmos_artisan_flatbread.jpg',
+        poster: '/thumbnails/mimmos_artisan_flatbread.jpg',
+        src: '/videos/mimmos_artisan_flatbread.mp4',
+        talent: 'Mimmo\'s Culinary Team',
+        format: '9:16 Vertical HD',
+        description: 'Crispy oven-baked Roman pinsa flatbread with loaded Mediterranean vegetables and fresh snow-fall parmesan grating.',
+        caption: 'Crispy oven-baked Roman pinsa flatbread with loaded Mediterranean vegetables and fresh snow-fall parmesan grating.',
+        isPlaceholder: false,
+        analytics: {
+          views: '95K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '91%',
+          interactions: '7.8K',
+          followersGained: '+245',
+          highlight: 'Sensory Food Close-Up Hook',
+          summary: '95K+ views with high retention on the parmesan snowfall grating hook, driving instant pizza cravings.'
         }
       }
     ]
