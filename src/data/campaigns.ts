@@ -765,6 +765,50 @@ export const INSTAGRAM_REELS_LIST: InstagramReelItem[] = [
       highlight: 'Behind-The-Counter Authenticity',
       summary: 'Authentic chef assembly reel reinforcing culinary mastery, ingredient freshness, and brand credibility.'
     }
+  },
+  {
+    id: 'reel-35',
+    reelCode: 'bft_little_italy_nickrof',
+    title: 'Body Fit Training Little Italy · Functional Fitness Circuit with @nickrof',
+    category: 'Creative Production',
+    videoUrl: '/videos/bft_little_italy_nickrof.mp4',
+    posterUrl: '/thumbnails/bft_little_italy_nickrof.jpg',
+    talent: '@nickrof × BFT Little Italy',
+    format: '9:16 Vertical HD',
+    description: 'High-energy functional fitness circuit deliverable highlighting BFT Little Italy community workouts, team conditioning, and science-backed progressive overload.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/bft_little_italy_nickrof.jpg',
+    analytics: {
+      views: '112K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '91%',
+      interactions: '8.9K',
+      followersGained: '+340',
+      highlight: 'High Energy Community Hook',
+      summary: '112K+ views with strong membership inquiry lift showcasing BFT Little Italy team conditioning.'
+    }
+  },
+  {
+    id: 'reel-36',
+    reelCode: 'bft_gym_review_sydpaige',
+    title: 'Body Fit Training × @sydpaige · "Your Next Gym To Try" Studio Review',
+    category: 'Social Media Management',
+    videoUrl: '/videos/bft_gym_review_sydpaige.mp4',
+    posterUrl: '/thumbnails/bft_gym_review_sydpaige.jpg',
+    talent: '@sydpaige × Body Fit Training',
+    format: '9:16 Vertical HD',
+    description: 'Viral creator gym recommendation breakdown by @sydpaige detailing BFT heart-rate tracking, station rotations, coach guidance, and first-timer class experience.',
+    aspectRatio: '9:16',
+    coverImage: '/thumbnails/bft_gym_review_sydpaige.jpg',
+    analytics: {
+      views: '168K+',
+      viewsContext: 'in 30 days',
+      nonFollowerReach: '94%',
+      interactions: '14.2K',
+      followersGained: '+580',
+      highlight: '168K+ Viral Studio Tour Hook',
+      summary: '168K+ views and direct trial pass conversions driven by creator first-person studio review.'
+    }
   }
 ];
 
@@ -1583,6 +1627,84 @@ export const INITIAL_CAMPAIGNS: Campaign[] = [
           followersGained: '+245',
           highlight: 'Sensory Food Close-Up Hook',
           summary: '95K+ views with high retention on the parmesan snowfall grating hook, driving instant pizza cravings.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'body-fit-training',
+    brand: 'Body Fit Training (BFT)',
+    title: 'Boutique Functional Fitness Studio Launch & Creator Campaign',
+    category: 'Social Media Management',
+    collaboratorNames: ['@sydpaige', '@nickrof'],
+    shortDescription: 'High-energy studio fitness and influencer campaign generating 280K+ views and surging trial membership signups for Body Fit Training.',
+    fullDescription: 'Body Fit Training (BFT) teamed up with Breakpoint Social to establish strong local brand authority for their boutique group fitness studios. By pairing authentic fitness creator studio walkthroughs with dynamic, high-cadence workout footage highlighting BFT\'s science-backed progressive programming, we drove hundreds of introductory trial passes and transformed local fitness enthusiasts into loyal studio members.',
+    objective: 'Drive brand awareness, overcome first-class hesitation, and generate introductory trial memberships through trusted local fitness creators.',
+    creativeApproach: 'First-person studio experience reviews by fitness creators (@sydpaige) paired with fast-paced, high-cadence class atmosphere reels (@nickrof) highlighting community and technique.',
+    servicesProvided: [
+      'Fitness Creator Partnerships',
+      'Studio Experience Video Production',
+      'Local Trial Membership Campaigns',
+      'Community Content Amplification'
+    ],
+    publicationStatus: 'published',
+    displayOrder: 6,
+    dateCreated: '2025-08',
+    thumbnail: {
+      type: 'video',
+      aspectRatio: '9:16',
+      src: '/videos/bft_gym_review_sydpaige.mp4',
+      isPlaceholder: false,
+      placeholderLabel: 'Body Fit Training × @sydpaige'
+    },
+    metrics: undefined,
+    mediaGallery: [
+      {
+        id: 'bft-ex-1',
+        type: 'video',
+        title: 'Body Fit Training × @sydpaige · "Your Next Gym To Try" Studio Review',
+        aspectRatio: '9:16',
+        videoUrl: '/videos/bft_gym_review_sydpaige.mp4',
+        posterUrl: '/thumbnails/bft_gym_review_sydpaige.jpg',
+        poster: '/thumbnails/bft_gym_review_sydpaige.jpg',
+        src: '/videos/bft_gym_review_sydpaige.mp4',
+        talent: '@sydpaige × Body Fit Training',
+        format: '9:16 Vertical HD',
+        description: 'Viral creator gym recommendation breakdown by @sydpaige detailing BFT heart-rate tracking, station rotations, coach guidance, and first-timer class experience.',
+        caption: 'Viral creator gym recommendation breakdown by @sydpaige detailing BFT heart-rate tracking, station rotations, coach guidance, and first-timer class experience.',
+        isPlaceholder: false,
+        analytics: {
+          views: '168K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '94%',
+          interactions: '14.2K',
+          followersGained: '+580',
+          highlight: '168K+ Viral Studio Tour Hook',
+          summary: '168K+ views and direct trial pass conversions driven by creator first-person studio review.'
+        }
+      },
+      {
+        id: 'bft-ex-2',
+        type: 'video',
+        title: 'Body Fit Training Little Italy · Functional Fitness Circuit with @nickrof',
+        aspectRatio: '9:16',
+        videoUrl: '/videos/bft_little_italy_nickrof.mp4',
+        posterUrl: '/thumbnails/bft_little_italy_nickrof.jpg',
+        poster: '/thumbnails/bft_little_italy_nickrof.jpg',
+        src: '/videos/bft_little_italy_nickrof.mp4',
+        talent: '@nickrof × BFT Little Italy',
+        format: '9:16 Vertical HD',
+        description: 'High-energy functional fitness circuit deliverable highlighting BFT Little Italy community workouts, team conditioning, and science-backed progressive overload.',
+        caption: 'High-energy functional fitness circuit deliverable highlighting BFT Little Italy community workouts, team conditioning, and science-backed progressive overload.',
+        isPlaceholder: false,
+        analytics: {
+          views: '112K+',
+          viewsContext: 'in 30 days',
+          nonFollowerReach: '91%',
+          interactions: '8.9K',
+          followersGained: '+340',
+          highlight: 'High Energy Community Hook',
+          summary: '112K+ views with strong membership inquiry lift showcasing BFT Little Italy team conditioning.'
         }
       }
     ]
